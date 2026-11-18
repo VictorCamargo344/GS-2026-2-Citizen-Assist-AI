@@ -1,0 +1,318 @@
+{
+  "natureza": "Evidencia de consultas de B com base real de A; nao e base de conhecimento nem avaliacao geral de E.",
+  "python": "3.12.10",
+  "testes_por_classe": {
+    "TestesUnitarios": 48,
+    "TestesIntegracaoA": 10
+  },
+  "sha256_zip_a": "9b76aff77563b932b7f6c84cff0e5e9ff1365c89423a58d3c6eff64e02e2a807",
+  "registros_reais": 3,
+  "temas_reais": [
+    "Documentos",
+    "Serviços",
+    "Orientações comunitárias"
+  ],
+  "consultas": [
+    {
+      "modalidade": "buscar_pergunta",
+      "entrada": "Como tirar a carteira de identidade?",
+      "esperado": {
+        "estado": "uma_correspondencia",
+        "ids": [
+          "DOC-01"
+        ],
+        "pontuacoes": [
+          4
+        ]
+      },
+      "obtido": {
+        "estado": "uma_correspondencia",
+        "ids": [
+          "DOC-01"
+        ],
+        "pontuacoes": [
+          4
+        ]
+      },
+      "passou": true
+    },
+    {
+      "modalidade": "buscar_pergunta",
+      "entrada": "Como consultar o Meu INSS?",
+      "esperado": {
+        "estado": "uma_correspondencia",
+        "ids": [
+          "SER-01"
+        ],
+        "pontuacoes": [
+          3
+        ]
+      },
+      "obtido": {
+        "estado": "uma_correspondencia",
+        "ids": [
+          "SER-01"
+        ],
+        "pontuacoes": [
+          3
+        ]
+      },
+      "passou": true
+    },
+    {
+      "modalidade": "buscar_pergunta",
+      "entrada": "Como receber alertas da Defesa Civil por SMS?",
+      "esperado": {
+        "estado": "uma_correspondencia",
+        "ids": [
+          "COM-01"
+        ],
+        "pontuacoes": [
+          6
+        ]
+      },
+      "obtido": {
+        "estado": "uma_correspondencia",
+        "ids": [
+          "COM-01"
+        ],
+        "pontuacoes": [
+          6
+        ]
+      },
+      "passou": true
+    },
+    {
+      "modalidade": "buscar_pergunta",
+      "entrada": "identidade e inss",
+      "esperado": {
+        "estado": "multiplas_correspondencias",
+        "ids": [
+          "DOC-01",
+          "SER-01"
+        ],
+        "pontuacoes": [
+          1,
+          1
+        ]
+      },
+      "obtido": {
+        "estado": "multiplas_correspondencias",
+        "ids": [
+          "DOC-01",
+          "SER-01"
+        ],
+        "pontuacoes": [
+          1,
+          1
+        ]
+      },
+      "passou": true
+    },
+    {
+      "modalidade": "buscar_pergunta",
+      "entrada": "rg e meu inss",
+      "esperado": {
+        "estado": "multiplas_correspondencias",
+        "ids": [
+          "SER-01",
+          "DOC-01"
+        ],
+        "pontuacoes": [
+          3,
+          1
+        ]
+      },
+      "obtido": {
+        "estado": "multiplas_correspondencias",
+        "ids": [
+          "SER-01",
+          "DOC-01"
+        ],
+        "pontuacoes": [
+          3,
+          1
+        ]
+      },
+      "passou": true
+    },
+    {
+      "modalidade": "buscar_pergunta",
+      "entrada": "",
+      "esperado": {
+        "estado": "entrada_vazia",
+        "ids": [],
+        "pontuacoes": []
+      },
+      "obtido": {
+        "estado": "entrada_vazia",
+        "ids": [],
+        "pontuacoes": []
+      },
+      "passou": true
+    },
+    {
+      "modalidade": "buscar_pergunta",
+      "entrada": "?!...",
+      "esperado": {
+        "estado": "entrada_vazia",
+        "ids": [],
+        "pontuacoes": []
+      },
+      "obtido": {
+        "estado": "entrada_vazia",
+        "ids": [],
+        "pontuacoes": []
+      },
+      "passou": true
+    },
+    {
+      "modalidade": "buscar_pergunta",
+      "entrada": null,
+      "esperado": {
+        "estado": "entrada_invalida",
+        "ids": [],
+        "pontuacoes": []
+      },
+      "obtido": {
+        "estado": "entrada_invalida",
+        "ids": [],
+        "pontuacoes": []
+      },
+      "passou": true
+    },
+    {
+      "modalidade": "buscar_pergunta",
+      "entrada": "como de o",
+      "esperado": {
+        "estado": "sem_correspondencia",
+        "ids": [],
+        "pontuacoes": []
+      },
+      "obtido": {
+        "estado": "sem_correspondencia",
+        "ids": [],
+        "pontuacoes": []
+      },
+      "passou": true
+    },
+    {
+      "modalidade": "buscar_pergunta",
+      "entrada": "Como preparar bolo de chocolate?",
+      "esperado": {
+        "estado": "sem_correspondencia",
+        "ids": [],
+        "pontuacoes": []
+      },
+      "obtido": {
+        "estado": "sem_correspondencia",
+        "ids": [],
+        "pontuacoes": []
+      },
+      "passou": true
+    },
+    {
+      "modalidade": "buscar_pergunta",
+      "entrada": "Preciso consultar meu CPF",
+      "esperado": {
+        "estado": "sem_correspondencia",
+        "ids": [],
+        "pontuacoes": []
+      },
+      "obtido": {
+        "estado": "sem_correspondencia",
+        "ids": [],
+        "pontuacoes": []
+      },
+      "passou": true
+    },
+    {
+      "modalidade": "buscar_pergunta",
+      "entrada": "  PREVIDENCIA??? ",
+      "esperado": {
+        "estado": "uma_correspondencia",
+        "ids": [
+          "SER-01"
+        ],
+        "pontuacoes": [
+          1
+        ]
+      },
+      "obtido": {
+        "estado": "uma_correspondencia",
+        "ids": [
+          "SER-01"
+        ],
+        "pontuacoes": [
+          1
+        ]
+      },
+      "passou": true
+    },
+    {
+      "modalidade": "buscar_pergunta",
+      "entrada": "DEFESA,,, CIVIL!",
+      "esperado": {
+        "estado": "uma_correspondencia",
+        "ids": [
+          "COM-01"
+        ],
+        "pontuacoes": [
+          4
+        ]
+      },
+      "obtido": {
+        "estado": "uma_correspondencia",
+        "ids": [
+          "COM-01"
+        ],
+        "pontuacoes": [
+          4
+        ]
+      },
+      "passou": true
+    },
+    {
+      "modalidade": "buscar_pergunta",
+      "entrada": "rg rg RG",
+      "esperado": {
+        "estado": "uma_correspondencia",
+        "ids": [
+          "DOC-01"
+        ],
+        "pontuacoes": [
+          1
+        ]
+      },
+      "obtido": {
+        "estado": "uma_correspondencia",
+        "ids": [
+          "DOC-01"
+        ],
+        "pontuacoes": [
+          1
+        ]
+      },
+      "passou": true
+    },
+    {
+      "modalidade": "buscar_pergunta",
+      "entrada": "urgente",
+      "esperado": {
+        "estado": "sem_correspondencia",
+        "ids": [],
+        "pontuacoes": []
+      },
+      "obtido": {
+        "estado": "sem_correspondencia",
+        "ids": [],
+        "pontuacoes": []
+      },
+      "passou": true
+    }
+  ],
+  "controle_sem_zip": {
+    "codigo_saida": 5,
+    "resultado": "Falha explicita de preparacao; integracao nao foi marcada como aprovada."
+  }
+}

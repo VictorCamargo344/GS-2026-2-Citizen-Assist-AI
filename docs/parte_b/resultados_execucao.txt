@@ -1,0 +1,67 @@
+Comando: python -B -W error -m unittest discover -s tests -v
+Dependencia: CITIZEN_PARTE_A_ZIP aponta para o ZIP original externo.
+Ambiente: Windows; Python 3.12.10
+
+test_a_carrega_tres_registros_em_tres_temas (test_busca.TestesIntegracaoA.test_a_carrega_tres_registros_em_tres_temas) ... ok
+test_ambiguidade_real_preserva_as_opcoes (test_busca.TestesIntegracaoA.test_ambiguidade_real_preserva_as_opcoes) ... ok
+test_consultas_aos_tres_registros_reais (test_busca.TestesIntegracaoA.test_consultas_aos_tres_registros_reais) ... ok
+test_copias_temporarias_e_zip_original_inalterados (test_busca.TestesIntegracaoA.test_copias_temporarias_e_zip_original_inalterados) ... ok
+test_filtro_real (test_busca.TestesIntegracaoA.test_filtro_real) ... ok
+test_hierarquia_e_percurso_dos_tres_assuntos_reais (test_busca.TestesIntegracaoA.test_hierarquia_e_percurso_dos_tres_assuntos_reais) ... ok
+test_id_tema_e_palavra_chave_reais (test_busca.TestesIntegracaoA.test_id_tema_e_palavra_chave_reais) ... ok
+test_importacao_sem_saida_interacao_ou_leitura_de_base (test_busca.TestesIntegracaoA.test_importacao_sem_saida_interacao_ou_leitura_de_base) ... ok
+test_limites_com_base_real (test_busca.TestesIntegracaoA.test_limites_com_base_real) ... ok
+test_registros_fontes_e_campos_de_a_preservados (test_busca.TestesIntegracaoA.test_registros_fontes_e_campos_de_a_preservados) ... ok
+test_adicao_de_registro_e_tema_sem_mudar_algoritmo (test_busca.TestesUnitarios.test_adicao_de_registro_e_tema_sem_mudar_algoritmo) ... ok
+test_apenas_palavras_funcionais (test_busca.TestesUnitarios.test_apenas_palavras_funcionais) ... ok
+test_base_vazia (test_busca.TestesUnitarios.test_base_vazia) ... ok
+test_empate_ordenado_por_id_independente_da_ordem_da_base (test_busca.TestesUnitarios.test_empate_ordenado_por_id_independente_da_ordem_da_base) ... ok
+test_entrada_principal_tem_precedencia_sobre_filtro (test_busca.TestesUnitarios.test_entrada_principal_tem_precedencia_sobre_filtro) ... ok
+test_entradas_vazias_em_todas_as_consultas (test_busca.TestesUnitarios.test_entradas_vazias_em_todas_as_consultas) ... ok
+test_expressao_composta_exige_ordem (test_busca.TestesUnitarios.test_expressao_composta_exige_ordem) ... ok
+test_expressao_mantem_palavras_funcionais_no_bonus (test_busca.TestesUnitarios.test_expressao_mantem_palavras_funcionais_no_bonus) ... ok
+test_expressao_repetida_nao_aumenta_pontos (test_busca.TestesUnitarios.test_expressao_repetida_nao_aumenta_pontos) ... ok
+test_filtro_de_tema_na_pergunta (test_busca.TestesUnitarios.test_filtro_de_tema_na_pergunta) ... ok
+test_filtro_inexistente_e_filtro_invalido (test_busca.TestesUnitarios.test_filtro_inexistente_e_filtro_invalido) ... ok
+test_fixture_tem_formato_valido_para_a (test_busca.TestesUnitarios.test_fixture_tem_formato_valido_para_a) ... ok
+test_hierarquia_de_temas_e_assuntos (test_busca.TestesUnitarios.test_hierarquia_de_temas_e_assuntos) ... ok
+test_id_existente (test_busca.TestesUnitarios.test_id_existente) ... ok
+test_id_inexistente (test_busca.TestesUnitarios.test_id_inexistente) ... ok
+test_id_maiusculas_e_espacos (test_busca.TestesUnitarios.test_id_maiusculas_e_espacos) ... ok
+test_localizacao_inexistente_ou_invalida (test_busca.TestesUnitarios.test_localizacao_inexistente_ou_invalida) ... ok
+test_localizacao_na_hierarquia (test_busca.TestesUnitarios.test_localizacao_na_hierarquia) ... ok
+test_modalidade_exata_mantem_regra_original_de_a (test_busca.TestesUnitarios.test_modalidade_exata_mantem_regra_original_de_a) ... ok
+test_modalidade_exata_nao_e_pergunta_livre (test_busca.TestesUnitarios.test_modalidade_exata_nao_e_pergunta_livre) ... ok
+test_multiplas_correspondencias_mantidas_mesmo_com_pontos_diferentes (test_busca.TestesUnitarios.test_multiplas_correspondencias_mantidas_mesmo_com_pontos_diferentes) ... ok
+test_nao_busca_no_texto_da_orientacao_ou_fonte (test_busca.TestesUnitarios.test_nao_busca_no_texto_da_orientacao_ou_fonte) ... ok
+test_navegacao_base_com_um_registro (test_busca.TestesUnitarios.test_navegacao_base_com_um_registro) ... ok
+test_navegacao_entre_tres_assuntos_sem_dependencias (test_busca.TestesUnitarios.test_navegacao_entre_tres_assuntos_sem_dependencias) ... ok
+test_navegacao_id_inexistente_ou_invalido (test_busca.TestesUnitarios.test_navegacao_id_inexistente_ou_invalido) ... ok
+test_navegacao_prioriza_mesmo_tema_e_nao_muda_ordem_original (test_busca.TestesUnitarios.test_navegacao_prioriza_mesmo_tema_e_nao_muda_ordem_original) ... ok
+test_navegacao_sem_id_oferece_todos_apos_busca_sem_resultado (test_busca.TestesUnitarios.test_navegacao_sem_id_oferece_todos_apos_busca_sem_resultado) ... ok
+test_nenhuma_funcao_normal_imprime_ou_solicita_input (test_busca.TestesUnitarios.test_nenhuma_funcao_normal_imprime_ou_solicita_input) ... ok
+test_operacoes_nao_mutam_registros (test_busca.TestesUnitarios.test_operacoes_nao_mutam_registros) ... ok
+test_palavra_chave_composta_exata (test_busca.TestesUnitarios.test_palavra_chave_composta_exata) ... ok
+test_palavra_chave_filtro_de_tema (test_busca.TestesUnitarios.test_palavra_chave_filtro_de_tema) ... ok
+test_palavra_chave_inexistente (test_busca.TestesUnitarios.test_palavra_chave_inexistente) ... ok
+test_palavra_chave_sem_acento (test_busca.TestesUnitarios.test_palavra_chave_sem_acento) ... ok
+test_palavra_chave_simples (test_busca.TestesUnitarios.test_palavra_chave_simples) ... ok
+test_palavra_funcional_na_base_nao_gera_correspondencia_livre (test_busca.TestesUnitarios.test_palavra_funcional_na_base_nao_gera_correspondencia_livre) ... ok
+test_palavra_repetida_nao_aumenta_pontos (test_busca.TestesUnitarios.test_palavra_repetida_nao_aumenta_pontos) ... ok
+test_palavras_chave_duplicadas_nao_aumentam_pontos (test_busca.TestesUnitarios.test_palavras_chave_duplicadas_nao_aumentam_pontos) ... ok
+test_pergunta_caixa_acento_pontuacao_espacos (test_busca.TestesUnitarios.test_pergunta_caixa_acento_pontuacao_espacos) ... ok
+test_pergunta_completa_e_pontuacao_conhecida (test_busca.TestesUnitarios.test_pergunta_completa_e_pontuacao_conhecida) ... ok
+test_pergunta_fora_da_base (test_busca.TestesUnitarios.test_pergunta_fora_da_base) ... ok
+test_pontuacao_separa_palavras_da_expressao (test_busca.TestesUnitarios.test_pontuacao_separa_palavras_da_expressao) ... ok
+test_registro_e_fonte_completos_e_metadados_separados (test_busca.TestesUnitarios.test_registro_e_fonte_completos_e_metadados_separados) ... ok
+test_sem_falso_positivo_por_substring (test_busca.TestesUnitarios.test_sem_falso_positivo_por_substring) ... ok
+test_tema_existente_e_acento (test_busca.TestesUnitarios.test_tema_existente_e_acento) ... ok
+test_tema_inexistente (test_busca.TestesUnitarios.test_tema_inexistente) ... ok
+test_tema_varios_registros_preserva_ordem (test_busca.TestesUnitarios.test_tema_varios_registros_preserva_ordem) ... ok
+test_temas_equivalentes_nao_duplicam_grupo (test_busca.TestesUnitarios.test_temas_equivalentes_nao_duplicam_grupo) ... ok
+test_tipos_inadequados_em_todas_as_consultas (test_busca.TestesUnitarios.test_tipos_inadequados_em_todas_as_consultas) ... ok
+
+----------------------------------------------------------------------
+Ran 58 tests in 0.388s
+
+OK

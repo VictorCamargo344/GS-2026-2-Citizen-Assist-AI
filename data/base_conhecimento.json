@@ -1,0 +1,56 @@
+[
+    {
+        "id": "DOC-01",
+        "tema": "Documentos",
+        "palavras_chave": [
+            "identidade",
+            "rg",
+            "cin",
+            "carteira de identidade",
+            "carteira de identidade nacional"
+        ],
+        "orientacao": "A Carteira de Identidade Nacional (CIN) usa o número do CPF como registro único. A primeira via em papel e a versão digital no aplicativo GOV.BR são gratuitas. O pedido é feito no instituto de identificação do seu estado ou do Distrito Federal, levando a certidão de nascimento ou de casamento. O RG no modelo antigo continua válido até 28 de fevereiro de 2032, segundo a fonte consultada. Agendamento e outras exigências mudam de um estado para outro: confirme no órgão de identificação do seu estado antes de ir.",
+        "referencia": {
+            "nome": "Ministério da Gestão e da Inovação em Serviços Públicos - Perguntas e Respostas sobre a nova Carteira de Identidade Nacional",
+            "link": "https://www.gov.br/gestao/pt-br/identidade-nacional"
+        },
+        "data_verificacao": "13/11/2026"
+    },
+    {
+        "id": "SER-01",
+        "tema": "Serviços",
+        "palavras_chave": [
+            "inss",
+            "135",
+            "meu inss",
+            "previdência",
+            "benefício",
+            "aposentadoria"
+        ],
+        "orientacao": "Os canais oficiais de atendimento do INSS são o site e o aplicativo Meu INSS (meu.inss.gov.br) e a Central 135. No Meu INSS é possível fazer consultas, emitir extratos, agendar atendimento e pedir serviços. A Central 135 atende por telefone de segunda a sábado, das 7h às 22h, no horário de Brasília. Prazos e documentos dependem do serviço pedido: confirme no próprio Meu INSS ou pelo 135.",
+        "referencia": {
+            "nome": "Instituto Nacional do Seguro Social (INSS) - Utilize os canais oficiais do INSS para atendimento",
+            "link": "https://www.gov.br/inss/pt-br/noticias/utilize-os-canais-oficiais-do-inss-para-atendimento"
+        },
+        "data_verificacao": "13/11/2026"
+    },
+    {
+        "id": "COM-01",
+        "tema": "Orientações comunitárias",
+        "palavras_chave": [
+            "defesa civil",
+            "alerta",
+            "alertas",
+            "40199",
+            "sms",
+            "desastre",
+            "enchente"
+        ],
+        "orientacao": "Para receber alertas da Defesa Civil por SMS, envie uma mensagem com o CEP da área de interesse para o número 40199. Uma resposta confirma o cadastro. É possível cadastrar mais de um CEP. Para ver os CEPs já cadastrados, envie CONSULTAR para 40199; para cancelar, envie SAIR e o CEP. Os alertas também chegam por outros canais, como WhatsApp e Telegram: os detalhes estão na fonte.",
+        "referencia": {
+            "nome": "Ministério da Integração e do Desenvolvimento Regional - Alertas de Desastres",
+            "link": "https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/alertas-de-desastres-1"
+        },
+        "data_verificacao": "13/11/2026"
+    }
+]
