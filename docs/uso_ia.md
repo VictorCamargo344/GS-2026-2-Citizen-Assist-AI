@@ -8,7 +8,7 @@ Registro pedido no enunciado da Global Solution 2026.2 (seção "Uso de intelig�
 | --- | --- | --- | --- | --- |
 | A — Base de conhecimento e leitura de arquivos | Claude (Anthropic), via claude.ai | Primeira versão do código, pesquisa de 3 orientações, testes de cenários de erro, documento de conferência | Mayara — RM [preencher] | 13/11/2026 |
 | B — [preencher] | | | | |
-| C — [preencher] | | | | |
+| C — Lógica de resposta e estratégias de prompts | ChatGPT (OpenAI) | A IA foi utilizada para elaborar e comparar modelos de prompts, definir instruções para o assistente, revisar textos e documentações, preparar cenários e testes automatizados e analisar a integração da Parte C com o formato de retorno da Parte B | Pietra Fanticelli - RM 573229 | 18/11/2026 | 
 | D — [preencher] | | | | |
 
 ## IA dentro do protótipo
@@ -93,13 +93,37 @@ Resumo do pedido feito à IA:
 - **Validação crítica realizada:**
 - **Erros da IA encontrados:**
 
-## Parte C — [nome da parte]
+## Parte C — Lógica de resposta e estratégias de prompts
 
 - **Ferramenta e data:**
+  - Ferramenta: ChatGPT (OpenAI).
+  - Data: 18/11/2026
 - **Para que foi usada:**
+  - Elaborar e comparar dois modelos de prompt: um objetivo e direto e outro didático e passo a passo.
+  - Sugerir instruções para definir o papel do assistente, o formato das respostas e cuidados para evitar informações inventadas.
+  - Revisar textos, mensagens, avisos e a documentação da Parte C.
+  - Apoiar a identificação de cenários de teste e a preparação dos testes automatizados em `tests/testes_resposta.py`, com registros simulados.
+  - Apoiar a análise da integração da Parte C com o formato de retorno da Parte B.
 - **O que foi decisão da equipe:**
+  - Definir e utilizar as estratégias de resposta objetiva e didática como modelos documentados para o assistente.
+  - Conferir a compatibilidade dos campos utilizados pela Parte C com a estrutura da Parte A.
+  - Manter a revisão humana como parte necessária da validação das respostas, fontes e orientações.
+  - Tratar os prompts como instruções documentadas em texto: o protótipo não realiza chamada a uma API externa de IA.
+  - Adaptar a Parte C ao retorno da Parte B, que contém `estado` e `resultados`, com o registro dentro do campo `registro`, incluindo tratamento para múltiplas      correspondências sem selecionar automaticamente a primeira.
 - **Validação crítica realizada:**
+  - As sugestões da IA foram revisadas e comparadas com a estrutura e os arquivos do projeto.
+  - Foram conferidos os campos `id`, `tema`, `palavras_chave`, `orientacao`, `referencia` e `data_verificacao`.
+  - Foi verificado que os 3 registros disponíveis no JSON seguem a estrutura esperada e abrangem os temas Documentos, Serviços e Orientações comunitárias.
+  - Os testes automatizados da Parte C foram executados: **15 de 15 passaram** no ambiente utilizado, com dados simulados.
+  - Também foi realizada uma execução local A → B → C com os arquivos disponibilizados, verificando consultas com uma, múltiplas e nenhuma correspondência.
+  - Foi identificado que a base possui somente 3 registros, embora o `base.py` indique o mínimo de 15 registros em 3 temas. Portanto, a base ainda precisa ser ampliada.
+  - Os testes simulados e a execução local não substituem a validação ponta a ponta com a base ampliada, a interface e as versões finais de todas as partes.
 - **Erros da IA encontrados:**
+  - **Detecção de confirmação por trecho de texto:** foi sugerido procurar uma palavra como “confirm” para identificar a necessidade de confirmação. Essa abordagem poderia gerar falsos positivos ou deixar passar outros avisos. A lógica foi simplificada para apresentar um aviso uniforme, sem depender dessa busca.
+  - **Conclusões além do que os testes demonstravam:** resultados com registros simulados não comprovavam a integração com a base real. Por isso, foi necessário distinguir os testes automatizados da verificação com os arquivos reais.
+  - **Limitação de avaliação automática:** critérios que verificam apenas a presença de fonte, link, data e avisos não garantem que a orientação esteja correta ou seja fácil de entender. Foi mantida a necessidade de avaliação humana.
+
+A equipe permanece responsável por compreender, revisar, testar e validar o código, as respostas e as fontes utilizadas no projeto.
 
 ## Parte D — [nome da parte]
 
