@@ -1,0 +1,122 @@
+[
+    {
+        "id_teste": "T01",
+        "tipo": "direta",
+        "pergunta": "Como tirar a carteira de identidade?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "DOC-01",
+        "observacao": "Usa a expressão exata 'carteira de identidade' das palavras-chave."
+    },
+    {
+        "id_teste": "T02",
+        "tipo": "direta",
+        "pergunta": "Como tirar RG?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "DOC-01",
+        "observacao": "Sigla curta presente nas palavras-chave."
+    },
+    {
+        "id_teste": "T03",
+        "tipo": "direta",
+        "pergunta": "Como agendar atendimento no Meu INSS?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "SER-01",
+        "observacao": "A orientação cita agendamento pelo Meu INSS."
+    },
+    {
+        "id_teste": "T04",
+        "tipo": "direta",
+        "pergunta": "Qual o horário da Central 135 do INSS?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "SER-01",
+        "observacao": "A orientação traz o horário de atendimento da Central 135."
+    },
+    {
+        "id_teste": "T05",
+        "tipo": "direta",
+        "pergunta": "Como receber alertas da Defesa Civil por SMS?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "COM-01",
+        "observacao": "Várias palavras-chave do mesmo registro na mesma pergunta."
+    },
+    {
+        "id_teste": "T06",
+        "tipo": "direta",
+        "pergunta": "Como cancelar os alertas da Defesa Civil?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "COM-01",
+        "observacao": "A orientação explica o cancelamento (enviar SAIR e o CEP)."
+    },
+    {
+        "id_teste": "T07",
+        "tipo": "reformulacao",
+        "pergunta": "Quero fazer meu documento de identificação",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "DOC-01",
+        "observacao": "Reformulação de T01 sem nenhuma palavra-chave exata ('identificação' não é 'identidade')."
+    },
+    {
+        "id_teste": "T08",
+        "tipo": "reformulacao",
+        "pergunta": "Como faço para me aposentar?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "SER-01",
+        "observacao": "Verbo 'aposentar' em vez do substantivo 'aposentadoria' das palavras-chave."
+    },
+    {
+        "id_teste": "T09",
+        "tipo": "reformulacao",
+        "pergunta": "Como ser avisado quando tiver chuva forte na minha cidade?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "COM-01",
+        "observacao": "Reformulação de T05 com sinônimos ('avisado', 'chuva forte') fora das palavras-chave."
+    },
+    {
+        "id_teste": "T10",
+        "tipo": "limite",
+        "pergunta": "",
+        "resultado_esperado": "entrada_vazia",
+        "id_esperado": null,
+        "observacao": "Entrada vazia."
+    },
+    {
+        "id_teste": "T11",
+        "tipo": "limite",
+        "pergunta": "   ?!  ",
+        "resultado_esperado": "entrada_vazia",
+        "id_esperado": null,
+        "observacao": "Só espaços e pontuação: deve ser tratada como entrada vazia."
+    },
+    {
+        "id_teste": "T12",
+        "tipo": "limite",
+        "pergunta": "Preciso do RG para pedir benefício no INSS",
+        "resultado_esperado": "multiplas_correspondencias",
+        "id_esperado": null,
+        "observacao": "Consulta ambígua: mistura palavras-chave de DOC-01 e SER-01."
+    },
+    {
+        "id_teste": "T13",
+        "tipo": "fora_do_tema",
+        "pergunta": "Como tirar a carteira de motorista?",
+        "resultado_esperado": "sem_correspondencia",
+        "id_esperado": null,
+        "observacao": "CNH não está na base. A palavra 'carteira' pode gerar um falso positivo com DOC-01."
+    },
+    {
+        "id_teste": "T14",
+        "tipo": "fora_do_tema",
+        "pergunta": "Qual a previsão do tempo para amanhã?",
+        "resultado_esperado": "sem_correspondencia",
+        "id_esperado": null,
+        "observacao": "Assunto fora dos temas cobertos e sem palavra-chave."
+    },
+    {
+        "id_teste": "T15",
+        "tipo": "fora_do_tema",
+        "pergunta": "Como fazer uma receita de bolo de cenoura?",
+        "resultado_esperado": "sem_correspondencia",
+        "id_esperado": null,
+        "observacao": "Assunto totalmente alheio à orientação cidadã."
+    }
+]
