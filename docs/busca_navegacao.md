@@ -27,7 +27,7 @@ requisitos de serviços ou situações pessoais.
 | Requisito | Implementação | Verificação |
 | --- | --- | --- |
 | Listas e dicionários; acesso por ID, tema e palavras-chave | `consultar_por_id`, `consultar_por_tema`, `consultar_por_palavra_chave` reaproveitam A | Testes de acessos, entradas e preservação |
-| Busca por pergunta ou seleção de assunto | `buscar_pergunta`; seleção de tema e de ID é explícita | Perguntas completas, filtros e consultas aos três registros reais |
+| Busca por pergunta ou seleção de assunto | `buscar_pergunta`; seleção de tema e de ID é explícita | Perguntas completas, filtros e consultas aos registros reais |
 | Hierarquia de temas e subtemas | `construir_hierarquia`: raiz → temas → assuntos; `localizar_na_hierarquia` recupera caminho | Testes de agrupamento e localização |
 | Continuidade entre pelo menos três assuntos | `sugerir_continuidade` oferece assuntos irmãos e outros temas da mesma raiz | Percurso DOC-01 → SER-01 → COM-01 → DOC-01 |
 | Estratégia e várias correspondências explicadas | Busca linear, regra de pontos e retorno de todas as opções positivas | Testes de pontuação, empates e múltiplos resultados |
@@ -146,20 +146,33 @@ estratégia, fora desta entrega introdutória.
 
 ## 6. Hierarquia e relações de navegação
 
-A árvore derivada da base recebida é:
+A árvore derivada da base atual (15 registros) é:
 
 ```text
 Orientação cidadã
   Documentos
-    identidade       [DOC-01]
+    identidade                [DOC-01]
+    cpf                       [DOC-02]
+    título de eleitor         [DOC-03]
+    certidão de nascimento    [DOC-04]
+    carteira de trabalho      [DOC-05]
   Serviços
-    inss             [SER-01]
+    inss                      [SER-01]
+    cadastro único            [SER-02]
+    cartão sus                [SER-03]
+    seguro-desemprego         [SER-04]
+    conta gov.br              [SER-05]
   Orientações comunitárias
-    defesa civil     [COM-01]
+    defesa civil              [COM-01]
+    emergência                [COM-02]
+    disque 100                [COM-03]
+    ligue 180                 [COM-04]
+    consumidor                [COM-05]
 ```
 
-`identidade`, `inss` e `defesa civil` são os rótulos retirados da primeira
-palavra-chave, não novos conteúdos cadastrados.
+Os rótulos dos assuntos são retirados da primeira palavra-chave de cada
+registro, não são novos conteúdos cadastrados. A árvore é montada pelo código
+a partir da base: acrescentar um registro ou um tema não exige mudar o algoritmo.
 
 As relações são **de organização e exploração**:
 
@@ -172,10 +185,11 @@ Cada sugestão informa `mesmo_tema`, `outro_tema` ou `tema_disponivel`, com uma
 justificativa. Não se afirma que obter a CIN é exigência para usar o INSS nem
 que um desses serviços depende dos alertas da Defesa Civil.
 
-Com os três registros recebidos, cada assunto pode oferecer os outros dois
-como exploração de outros temas de orientação cidadã. O percurso entre três
-assuntos foi verificado com os IDs reais. Quando a base ganhar assuntos do
-mesmo tema, estes terão prioridade sem alterar as regras.
+Com 5 assuntos por tema, a partir de qualquer assunto o sistema sugere primeiro
+os outros 4 do mesmo tema e depois os 10 dos outros temas. Por exemplo, de
+DOC-01 (identidade) as primeiras sugestões são CPF, título de eleitor, certidão
+de nascimento e carteira de trabalho. O percurso entre três assuntos de temas
+diferentes (DOC-01 → SER-01 → COM-01 → DOC-01) é verificado pelos testes.
 
 Não há tabela de vínculos manuais, portanto não são criados destinos para IDs
 que não estejam na lista válida. Um ID de origem inexistente é sinalizado;
@@ -186,19 +200,22 @@ recomenda a própria origem.
 
 | Pergunta | Resultado esperado e obtido | Pontos |
 | --- | --- | --- |
-| Como tirar a carteira de identidade? | DOC-01 | 4 |
+| Como tirar a carteira de identidade? | DOC-01 e DOC-05; múltiplas correspondências, DOC-01 em primeiro | 4 e 1 |
 | Como consultar o Meu INSS? | SER-01 | 3 |
 | Como receber alertas da Defesa Civil por SMS? | COM-01 | 6 |
 | identidade e inss | DOC-01 e SER-01; múltiplas correspondências | 1 e 1 |
 | Como preparar bolo de chocolate? | Sem correspondência | — |
-| Preciso consultar meu CPF | Sem correspondência | — |
+| Preciso consultar meu CPF | DOC-02 | 1 |
 
-No último exemplo, CPF aparece no texto da orientação de identidade, mas não
-nas palavras-chave recebidas. O algoritmo não infere que uma dúvida específica
-sobre CPF possa ser respondida por essa orientação.
+No primeiro exemplo, a palavra "carteira" também está em "carteira de
+trabalho" (DOC-05). Por isso o DOC-05 aparece como segunda opção, com 1 ponto,
+enquanto o DOC-01 soma 4 pontos (2 palavras + 2 de bônus pela expressão
+inteira). O usuário vê as duas opções, com a mais provável em primeiro lugar.
 
-As consultas registradas estão em `consultas_verificadas.json`. Os resultados
-dos testes estão em `resultados_execucao.txt`.
+A avaliação completa, com 42 perguntas de teste, está em
+`docs/resultados_testes.md`.
+
+Esses exemplos também estão nos testes de integração de `tests/test_busca.py`.
 
 ## 8. Limitações e explicação para apresentação
 

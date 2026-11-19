@@ -1,41 +1,31 @@
 # Guia de integração — Parte B
 
-## 1. O que copiar e onde
+Este guia descreve o que cada função da Parte B recebe e devolve. Ele serve
+para quem chama a busca: a resposta (Parte C), a interface (Parte D) e a
+avaliação (Parte E).
 
-Na pasta da atividade Citizen Assist AI do repositório do grupo, a organização
-esperada é:
+## 1. Onde ficam os arquivos
 
 ```text
-pasta-da-global-solution/
-  src/
-    base.py                 [Parte A original]
-    busca.py                [copiar desta entrega]
-    resposta.py             [Parte C, a integrar]
-    sistema.py              [Parte D / integração, a criar pelo grupo]
-  data/
-    base_conhecimento.json  [Parte A]
-  tests/
-    test_busca.py           [testes de B]
-  docs/
-    ...documentos de B e das demais partes...
+src/
+  base.py                 [Parte A: leitura e validação da base]
+  busca.py                [Parte B: consulta, hierarquia e navegação]
+  resposta.py             [Parte C: formatação da resposta e avisos]
+  testes.py               [Parte E: avaliação com as perguntas de teste]
+  sistema.py              [Parte D: ponto de entrada e interface]
+data/
+  base_conhecimento.json  [Parte A]
+tests/
+  test_busca.py           [testes automatizados da Parte B]
 ```
 
-Copie `busca.py` ao lado do `base.py` original. Não copie os arquivos de teste
-para `src/`. Incorpore os documentos preservando os documentos já existentes
-do grupo. A integração do texto sobre IA está explicada em `uso_ia_parte_b.md`.
-
-A embalagem recebida de A tinha os arquivos juntos. É responsabilidade da
-integração colocar o JSON em `data/` e o módulo em `src/`, pois A calcula esse
-caminho a partir de seu próprio arquivo. Não é necessário editar A.
+A Parte A calcula o caminho do JSON a partir do próprio arquivo, por isso o
+JSON fica em `data/` e os módulos em `src/`.
 
 Os imports de B usam `from base import ...`, seguindo a convenção de execução
-`python src/sistema.py` proposta para o grupo. Ao executar esse arquivo, Python
-encontra os módulos irmãos em `src/`. B não é um pacote independente e não
-precisa de `pip install`. Um uso com imports de pacote, como `import src.busca`,
-exigiria adaptar a convenção de imports na integração; não é o caminho adotado.
-
-O comando final `python src/sistema.py` só funcionará depois que o grupo criar
-o ponto de entrada. Ele não é um comando de execução desta entrega isolada.
+`python src/sistema.py`. Ao executar um arquivo de `src/`, o Python encontra os
+módulos vizinhos na mesma pasta. B não é um pacote independente e não precisa
+de `pip install`.
 
 ## 2. Contrato recebido de A
 
@@ -188,7 +178,7 @@ from busca import consultar_por_tema, consultar_por_palavra_chave, buscar_pergun
 assuntos = consultar_por_tema(validos, "Serviços")
 exata = consultar_por_palavra_chave(validos, "meu inss")
 filtrada = buscar_pergunta(validos, "identidade e inss", tema="Serviços")
-# filtrada contém apenas SER-01 na base recebida.
+# filtrada contém apenas SER-01 na base atual.
 ```
 
 Somente `buscar_pergunta` trata pontuação e espaços internos como separadores.
@@ -266,11 +256,14 @@ as opções de menu, pedir desambiguação e conduzir o fluxo de tela. E pode
 aproveitar os estados e os registros retornados, mas deve criar sua avaliação
 completa de acerto, tempo e facilidade de uso.
 
-Reexecute os testes após alterar A ou suas palavras-chave. A parte de integração
-dos testes documenta especificamente o ZIP recebido com três registros; se a
-base crescer, atualize as expectativas de integração junto com o grupo, sem
-transformar esse número em regra fixa da busca.
+Reexecute os testes após alterar A ou suas palavras-chave:
 
-O ZIP de A é necessário apenas para esta suíte portátil de verificação. O
-módulo B integrado depende de `base.py` e dos registros em memória, não do ZIP,
-de uma variável de ambiente, do caminho deste computador ou de downloads.
+```text
+python -B -m unittest discover -s tests -v
+```
+
+A parte de integração dos testes usa os arquivos reais do repositório
+(`src/base.py`, `src/busca.py` e `data/base_conhecimento.json`), copiados para
+uma pasta temporária. Ela exige o mínimo do enunciado (15 registros em 3 temas)
+e alguns resultados conhecidos da base atual; se as palavras-chave mudarem,
+atualize essas expectativas junto com o grupo.
