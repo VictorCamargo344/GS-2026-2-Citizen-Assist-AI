@@ -246,7 +246,9 @@ O roteiro foi executado pela equipe na interface real (`python src/sistema.py`) 
 - As sugestões de outros temas são sempre o primeiro assunto de cada tema, mesmo sem relação com a orientação lida.
 - No falso positivo da carteira de motorista, a interface mostra um menu com "identidade" e "carteira de trabalho". A opção "Nenhuma dessas opções" permite sair e chegar ao aviso de limitação, mas uma pessoa apressada poderia escolher a opção errada.
 
-Essa aplicação confirma que todas as tarefas **podem** ser concluídas, mas foi feita por quem conhece o sistema. A aplicação com um participante externo, com tempo e nota de facilidade, continua recomendada; a tabela para isso está pronta em [`teste_usabilidade.md`](teste_usabilidade.md).
+Essa aplicação confirma que todas as tarefas **podem** ser concluídas, mas foi feita por quem conhece o sistema.
+
+Em 19/11/2026, o roteiro foi aplicado com uma **participante externa** (adulta, acima de 60 anos, pouco uso de computador e primeira vez em uma IDE). Ela concluiu **11 de 11 tarefas, 7 sem ajuda (63,6%)**, entre 1 e 2 minutos por tarefa, e deu nota **5 de 5** de facilidade. As 4 ajudas tiveram a mesma causa: depois de cada resposta, o menu é impresso de novo e a resposta sobe na tela. Detalhes em [`teste_usabilidade.md`](teste_usabilidade.md), seção 6.
 
 ## 6. Melhorias
 
@@ -268,11 +270,14 @@ Uma palavra que aparece em um único registro (como "samu") indica o assunto com
 **4. Ampliar o conjunto de testes com perguntas de pessoas de fora da equipe.**
 Pedir a pessoas do público do projeto que escrevam suas dúvidas com as próprias palavras e usar essas frases como reformulações. Isso mede melhor o comportamento real do que perguntas escritas por quem conhece as palavras-chave.
 
+**5. Pausar depois de cada resposta na interface.**
+No teste com a participante externa, todas as ajudas aconteceram porque a resposta subia na tela quando o menu era impresso de novo. Mostrar "Pressione Enter para voltar ao menu" depois de cada resposta mantém o texto visível até a pessoa terminar de ler.
+
 ## 7. Limitações da avaliação
 
 - **Amostra pequena.** Com 42 perguntas, cada teste vale 2,4 pontos percentuais da taxa geral, e alguns tipos têm só 3 a 5 perguntas. Uma única pergunta a mais ou a menos muda bastante a taxa desses tipos.
 - **Perguntas escritas pela própria equipe.** Mesmo com o gabarito definido antes da execução, quem escreveu as perguntas conhecia as palavras-chave da base. As perguntas diretas tendem a ser mais favoráveis do que as de um usuário real, o que ajuda a explicar os 100% nas diretas.
 - **A separação entre "treino" e "validação" é parcial.** As reformulações novas foram escritas antes dos sinônimos, mas pela mesma equipe, que já sabia quais assuntos e situações seriam testados. Por isso o 81,8% provavelmente é um pouco otimista. Reformulações escritas por pessoas de fora (seção 6.2, item 4) dariam uma medida mais confiável.
-- **O teste verifica o comportamento, não a qualidade do texto.** A correção confere o estado da busca, o registro encontrado e a presença dos avisos obrigatórios. Ela não avalia se a orientação está clara, se a pessoa entendeu, nem se o conteúdo da base está atualizado. Clareza e compreensão ficam para o teste de facilidade de uso (seção 5), que até agora foi executado só pela equipe.
+- **O teste verifica o comportamento, não a qualidade do texto.** A correção confere o estado da busca, o registro encontrado e a presença dos avisos obrigatórios. Ela não avalia se a orientação está clara, se a pessoa entendeu, nem se o conteúdo da base está atualizado. Clareza e compreensão ficam para o teste de facilidade de uso (seção 5), que teve um único participante externo.
 - **O tempo medido é só o do processamento.** Ele não inclui a exibição na tela, a digitação nem a leitura da resposta. Os valores também dependem do computador e variam entre execuções.
 - **O limite de 3 opções no menu é uma escolha da equipe.** Ele não foi validado com usuários. Nesta execução, todos os menus tiveram 2 opções, então o limite ainda não foi realmente posto à prova.
