@@ -6,12 +6,12 @@ Registro exigido pelo enunciado da Global Solution 2026.2: onde a IA foi usada, 
 
 | Frente | Ferramenta | Para que foi usada | Responsável pela validação | Data |
 | --- | --- | --- | --- | --- |
-| A — Base de conhecimento e leitura de arquivos | Claude (Anthropic), via claude.ai | Primeira versão do código, pesquisa de 3 orientações, testes de cenários de erro, documento de conferência | Mayara — RM [preencher] | 13/11/2026 |
-| B — Consulta, navegação e algoritmos | Codex (OpenAI) | Leitura dos requisitos, implementação da busca, da hierarquia e da navegação, testes automatizados e documentação | [nome] — RM [preencher] | 17/11/2026 |
+| A — Base de conhecimento e leitura de arquivos | Claude (Anthropic), via claude.ai | Primeira versão do código, pesquisa de 3 orientações, testes de cenários de erro, documento de conferência | Mayara Luisa Vicente Rosa — RM 571955 | 13/11/2026 |
+| B — Consulta, navegação e algoritmos | Codex (OpenAI) | Leitura dos requisitos, implementação da busca, da hierarquia e da navegação, testes automatizados e documentação | Gabriel Luís de Lima Ramos — RM 568984 | 17/11/2026 |
 | C — Lógica de resposta e estratégias de prompts | ChatGPT (OpenAI) | Elaboração e comparação dos modelos de prompt, instruções do assistente, revisão de textos, testes automatizados e análise da integração com a Parte B | Pietra Fanticelli — RM 573229 | 18/11/2026 |
-| D — Interação e tratamento de erros | [preencher] | [preencher] | [nome] — RM [preencher] | [preencher] |
-| E — Testes e indicadores de desempenho | Claude Code (Anthropic), extensão do VS Code; Claude (Anthropic), via claude.ai | Tutoria na escrita do script de avaliação (duas partes escritas pela IA), complemento das perguntas de teste T06–T15, redação do relatório de resultados e do roteiro de usabilidade, e revisão | [nome] — RM [preencher] | 18/11/2026 |
-| Integração e preparação da entrega | Claude Code (Anthropic), extensão do VS Code | Ampliação da base para 15 registros, novas perguntas de teste, adaptação dos testes da Parte B, comparação dos modelos de resposta, roteiro de usabilidade e README | [nome] — RM [preencher] | 18/11/2026 |
+| D — Interação e tratamento de erros | Claude Code (Anthropic), extensão do VS Code | Implementação da interface em texto (`src/sistema.py`) e dos testes automatizados da interface (`tests/test_sistema.py`), feita pela IA em etapas, com supervisão da equipe | Equipe | 18/11/2026 |
+| E — Testes e indicadores de desempenho | Claude Code (Anthropic), extensão do VS Code; Claude (Anthropic), via claude.ai | Tutoria na escrita do script de avaliação (duas partes escritas pela IA), complemento das perguntas de teste T06–T15, redação do relatório de resultados e do roteiro de usabilidade, e revisão | Victor de Camargo Gomes — RM 568912 | 18/11/2026 |
+| Integração e preparação da entrega | Claude Code (Anthropic), extensão do VS Code | Ampliação da base para 15 registros, vocabulário do dia a dia nas palavras-chave, novas perguntas de teste, aplicação do roteiro de usabilidade, adaptação dos testes da Parte B, comparação dos modelos de resposta, roteiro de usabilidade e README | Victor de Camargo Gomes — RM 568912 | 18/11/2026 |
 
 ## IA dentro do protótipo
 
@@ -147,9 +147,9 @@ Esses ajustes vieram da revisão automatizada da ferramenta e não equivalem a r
 - [ ] Estudar e conseguir explicar as funções, a pontuação, os empates e a navegação
 - [ ] Revisar a adequação dos termos e da linguagem ao público do projeto
 - [ ] Conferir a atualidade das orientações nas fontes oficiais da Parte A
-- [ ] Ampliar a base para pelo menos 15 registros
-- [ ] Integrar e avaliar as Partes C, D e E com a base final
-- [ ] Fazer a avaliação de facilidade de uso prevista no enunciado
+- [x] Ampliar a base para pelo menos 15 registros
+- [x] Integrar e avaliar as Partes C, D e E com a base final
+- [ ] Fazer a avaliação de facilidade de uso prevista no enunciado (roteiro aplicado na interface; falta a aplicação com participante externo)
 
 ### Limites do uso de IA nesta parte
 
@@ -205,17 +205,49 @@ A equipe permanece responsável por compreender, revisar, testar e validar o có
 
 ## Parte D — Interação e tratamento de erros
 
-_Seção a preencher pela frente D._
-
 ### Ferramenta e materiais
+
+- **Ferramenta:** Claude Code (Anthropic), extensão do VS Code, modelo Claude Opus 5.5.
+- **Data:** 18/11/2026.
+- **Materiais entregues à IA:** enunciado da Global Solution 2026.2, plano de trabalho do grupo e o repositório com as Partes A, B, C e E já integradas.
+
+### Forma de trabalho
+
+Nesta frente, **o código foi escrito inteiramente pela IA**, com supervisão da equipe. O trabalho foi feito em etapas: antes de cada criação ou alteração, a IA informava o que pretendia fazer, e a equipe aprovava, pedia ajustes ou sugeria outro caminho. Nenhuma alteração foi aplicada sem essa aprovação.
 
 ### O que a IA produziu e o que foi decisão da equipe
 
+| Item | Arquivo | Origem |
+| --- | --- | --- |
+| Interface em texto: menu principal, menu de temas e assuntos, pergunta digitada, troca do formato de resposta e opção "Sobre" | `src/sistema.py` | Escrita pela IA, com aprovação da equipe em cada etapa |
+| Tratamento de entrada vazia, texto no lugar de número, opção inexistente e encerramento com Ctrl+C ou Ctrl+Z | `src/sistema.py` | Escrito pela IA, com aprovação da equipe |
+| Opção "Nenhuma dessas opções" no menu de ambiguidade, levando ao aviso de limitação | `src/sistema.py` | Ideia da equipe, surgida na definição dos critérios de teste; implementada pela IA |
+| Assuntos relacionados depois de cada resposta (até 3 do mesmo tema e 1 de cada outro tema) e alternativas depois de uma pergunta sem resposta | `src/sistema.py` | Escrito pela IA, usando as funções de navegação da Parte B |
+| Formato de resposta inicial "guiado" (Modelo 2), escolhido a partir da comparação dos modelos da Parte C | `src/sistema.py` | Proposto pela IA; aprovado pela equipe |
+| Aviso para não digitar dados pessoais na tela de pergunta; nada do que a pessoa digita é gravado | `src/sistema.py` | Escrito pela IA, com aprovação da equipe |
+| 11 testes automatizados da interface, que simulam o que a pessoa digita e conferem a tela | `tests/test_sistema.py` | Escritos pela IA, com aprovação da equipe |
+
 ### Validação crítica realizada
+
+| O que foi conferido | Como | Resultado |
+| --- | --- | --- |
+| Funcionamento da interface | 11 testes automatizados: sair pelo menu, fim da entrada, opção vazia, inexistente e em texto, navegação por temas, continuidade, pergunta vazia, pergunta sem resposta, ambiguidade (escolhendo uma opção e escolhendo "nenhuma"), troca de formato e base inválida | 11 de 11 passam |
+| Integração com as outras partes | `python -B -W error -m unittest discover -s tests` | 92 de 92 testes passam (busca, respostas e interface) |
+| Uso real | Execução de `python src/sistema.py` seguindo o roteiro de tarefas do teste de facilidade de uso (Aplicação 1, `docs/teste_usabilidade.md`) | 11 de 11 tarefas concluídas; as dificuldades observadas estão registradas no documento |
 
 ### Erros da IA encontrados na revisão
 
+- [preencher: ajustes pedidos pela equipe ou sugestões da IA recusadas durante a supervisão]
+
 ### Limites do uso de IA nesta parte
+
+- Esta é a frente com maior participação da IA no projeto: o código foi escrito por ela, e a contribuição da equipe foi supervisionar, aprovar e ajustar cada etapa.
+- Os testes automatizados conferem o que aparece na tela, mas não substituem o teste com uma pessoa de fora da equipe (Aplicação 2 do teste de facilidade de uso).
+
+### Validação pela equipe (antes da entrega)
+
+- [ ] Conseguir explicar o fluxo de `menu_principal`, `fazer_pergunta`, `tratar_ambiguidade` e `escolher_numero` sem consultar a IA
+- [ ] Aplicar o teste de facilidade de uso com uma pessoa de fora da equipe (Aplicação 2)
 
 ---
 
@@ -247,7 +279,7 @@ A IA foi usada como tutora: explicava o que precisava ser feito e o estudante es
 | Texto do relatório de resultados (critérios, resultados, interpretação, melhorias e limitações) | `docs/resultados_testes.md` | Redigido pela IA a partir das definições do estudante e da execução real do script; revisado pelo estudante, que reescreveu trechos mantendo o sentido |
 | Funções `carregar_perguntas`, `executar_teste`, `classificar`, `montar_linha`, `media`, `percentual`, `calcular_indicadores`, `salvar_csv` e `mostrar_relatorio` | `src/testes.py` | Escritas pelo estudante, com orientação da IA |
 | Função `br` e bloco principal (`if __name__ == "__main__":`) | `src/testes.py` | Escritos pela IA a pedido do estudante; revisados pelo estudante |
-| Roteiro do teste de facilidade de uso | `docs/teste_usabilidade.md` | Redigido pela IA; aplicação pendente da interface (Parte D) |
+| Roteiro do teste de facilidade de uso | `docs/teste_usabilidade.md` | Redigido pela IA |
 
 ### Validação crítica realizada
 
@@ -256,7 +288,7 @@ A IA foi usada como tutora: explicava o que precisava ser feito e o estudante es
 | Gabarito sem viés | O `resultado_esperado` de cada pergunta foi definido **antes** de executar a busca, a partir das palavras-chave da base | A execução confirmou as previsões feitas antes do teste: erro nas reformulações e falsos positivos onde uma palavra solta coincide com outro registro |
 | Função `classificar` | 13 casos inventados, um para cada caminho possível (acerto direto, via menu, fora do top 3, registro errado, falso positivo, ausência de aviso etc.) | 13 de 13 com a classificação esperada |
 | Função `carregar_perguntas` | 8 arquivos de teste: real, ausente, vazio, JSON quebrado, objeto em vez de lista, lista vazia, pergunta sem campos e pergunta sem `id_esperado` | Os 8 devolvem uma mensagem clara sem travar |
-| Execução completa | `python src/testes.py` com a base real | Sem erros. Com 3 registros e 15 perguntas: 11 acertos (73,3%). Com 15 registros e 31 perguntas: 24 acertos (77,4%) |
+| Execução completa | `python src/testes.py` com a base real | Sem erros. Com 3 registros e 15 perguntas: 11 acertos (73,3%). Com 15 registros e 31 perguntas: 24 acertos (77,4%). Com 42 perguntas e o vocabulário ampliado: 38 acertos (90,5%) |
 | Compatibilidade com as Partes B e C | Conferência no código dos nomes dos estados devolvidos por `buscar_pergunta` e dos textos fixos de aviso de `src/resposta.py` | Nomes e textos conferem |
 
 ### Erros da IA encontrados na revisão
@@ -278,7 +310,8 @@ Os pontos abaixo foram identificados na revisão do script e dos documentos (com
 - [x] Acrescentar perguntas de teste para os registros novos (T16 a T31)
 - [ ] Rodar `python src/testes.py` em um computador da equipe e conferir a saída
 - [ ] Abrir `docs/resultados_testes.csv` no Excel e conferir acentos e números
-- [ ] Aplicar o teste de facilidade de uso quando a interface (Parte D) estiver pronta
+- [x] Aplicar o roteiro de tarefas na interface (Aplicação 1)
+- [ ] Aplicar o teste de facilidade de uso com uma pessoa de fora da equipe (Aplicação 2)
 - [ ] Conseguir explicar `classificar`, `executar_teste` e o cálculo dos indicadores sem consultar a IA
 
 ### Limites do uso de IA nesta parte
@@ -294,7 +327,7 @@ Os pontos abaixo foram identificados na revisão do script e dos documentos (com
 
 - **Ferramenta:** Claude Code (Anthropic), extensão do VS Code, modelo Claude Opus 5.5, com ferramenta de busca na web.
 - **Data:** 18/11/2026.
-- **Pedido:** deixar o repositório pronto para a entrega com as frentes A, B, C e E, seguindo o enunciado e o plano de trabalho, enquanto a frente D não era entregue.
+- **Pedido:** deixar o repositório pronto para a entrega, seguindo o enunciado e o plano de trabalho. A interface (frente D) tem seção própria neste documento.
 
 ### O que a IA produziu e o que foi decisão da equipe
 
@@ -305,7 +338,10 @@ Os pontos abaixo foram identificados na revisão do script e dos documentos (com
 | Atualização dos resultados, da interpretação, das melhorias e das limitações | `docs/resultados_testes.md` | Redigidas pela IA a partir da execução real |
 | Adaptação dos testes da Parte B para usarem os arquivos do repositório, sem o ZIP externo, e para a base de 15 registros | `tests/test_busca.py` | Feita pela IA a pedido do estudante |
 | Comparação dos dois modelos de resposta nas 18 perguntas diretas | `docs/modelos_prompt.md` | Dados gerados com as funções da Parte C; texto e conclusão redigidos pela IA |
-| Roteiro do teste de facilidade de uso | `docs/teste_usabilidade.md` | Redigido pela IA; aplicação pendente da interface (Parte D) |
+| Roteiro do teste de facilidade de uso | `docs/teste_usabilidade.md` | Redigido pela IA |
+| Aplicação do roteiro de tarefas na interface real (Aplicação 1) | `docs/teste_usabilidade.md` | [confirmar: executada pelo estudante ou pela IA] |
+| 11 reformulações de validação (T32 a T42), escritas antes da ampliação do vocabulário e com gabarito não alterado depois | `data/perguntas_teste.json` | [confirmar: geradas pela IA ou escritas pelo estudante] |
+| Vocabulário do dia a dia nas palavras-chave dos 15 registros (63 palavras-chave novas) | `data/base_conhecimento.json` | Melhoria proposta na avaliação; [confirmar: termos escolhidos pela IA e aprovados pelo estudante, ou escolhidos pelo estudante] |
 | Unificação dos registros de uso de IA e reorganização da pasta `docs/` | `docs/` | Feita pela IA; o estudante decidiu apagar os arquivos de origem e as evidências internas da Parte B |
 | README completo | `README.md` | Redigido pela IA a partir dos documentos do projeto |
 
@@ -316,7 +352,8 @@ Os pontos abaixo foram identificados na revisão do script e dos documentos (com
 | Formato da base ampliada | `python src/base.py` | 15 registros válidos, 5 em cada tema; a base atende ao mínimo do enunciado |
 | Palavras-chave dos registros novos | Antes de escrever, cada palavra-chave foi conferida contra as dos outros registros, para evitar coincidências que gerassem ambiguidade sem motivo (por exemplo, "civil", "nacional" e "gov.br" foram evitadas onde puxariam outro registro) | Restaram coincidências conhecidas e documentadas ("carteira", "conta", "direito"), que aparecem nos testes T01, T13, T19, T28 e T31 |
 | Gabarito das perguntas novas | O resultado esperado foi escrito antes de rodar a busca | As previsões registradas no campo `observacao` se confirmaram, inclusive os erros esperados (T28, T29 e T31) |
-| Testes automatizados de B e C | `python -B -W error -m unittest discover -s tests` | 81 de 81 testes passam, sem a variável do ZIP |
+| Testes automatizados de B e C | `python -B -W error -m unittest discover -s tests` | 81 de 81 testes passam, sem a variável do ZIP (92 de 92 depois da entrada dos testes da interface) |
+| Efeito do vocabulário ampliado | `python src/testes.py`, antes e depois da ampliação | Reformulações de validação (T32 a T42) passaram de 0/11 para 9/11, sem nenhum falso positivo novo |
 
 ### Erros e limites encontrados
 
@@ -327,6 +364,7 @@ Os pontos abaixo foram identificados na revisão do script e dos documentos (com
 ### Validação pela equipe (antes da entrega)
 
 - [ ] Abrir os 12 links novos da base e confirmar cada frase das orientações
+- [ ] Conferir se as 63 palavras-chave novas fazem sentido para a orientação de cada registro
 - [ ] Rodar `python src/base.py`, `python src/testes.py` e `python -B -m unittest discover -s tests` em um computador da equipe
 - [ ] A pessoa da frente B revisar as adaptações em `tests/test_busca.py`
 - [ ] A pessoa da frente C revisar a comparação dos modelos em `docs/modelos_prompt.md`

@@ -22,11 +22,11 @@ Global Solution 2026.2 · Desafio CitizenTech
 
 | Integrante | RM | Frente |
 | --- | --- | --- |
-| Mayara [sobrenome] | [pendente] | A — Base de conhecimento e leitura de arquivos |
-| [pendente] | [pendente] | B — Consulta, navegação e algoritmos |
+| Mayara Luisa Vicente Rosa | 571955 | A — Base de conhecimento e leitura de arquivos |
+| Gabriel Luís de Lima Ramos | 568984 | B — Consulta, navegação e algoritmos |
 | Pietra Fanticelli | 573229 | C — Lógica de resposta e estratégias de prompts |
-| [pendente] | [pendente] | D — Interação e tratamento de erros |
-| [pendente] | [pendente] | E — Testes e indicadores de desempenho |
+| Eduardo Lopes da Silveira Mota | 563418 | D — Interação e tratamento de erros |
+| Victor de Camargo Gomes | 568912 | E — Testes e indicadores de desempenho |
 
 ## 👩‍🏫 Professores
 
@@ -198,6 +198,48 @@ Os "modelos" são estratégias documentadas de instrução e formato de resposta
 - Toda orientação vem com a **fonte** e a **data de verificação**, e com o aviso de que as informações podem mudar.
 - Toda resposta lembra que o assistente **não é canal oficial**.
 - Em caso de dúvida entre assuntos, ele **pergunta** em vez de escolher.
+
+---
+
+## 🖥️ Interface e tratamento de erros
+
+O assistente funciona no terminal (`python src/sistema.py`) e é todo conduzido por menus numerados e por perguntas digitadas.
+
+### Menu principal
+
+| Opção | O que faz |
+| --- | --- |
+| **1. Ver temas e assuntos** | Mostra os 3 temas; ao escolher um tema, lista os seus assuntos; ao escolher um assunto, mostra a orientação |
+| **2. Fazer uma pergunta** | Recebe uma dúvida digitada e envia para a busca |
+| **3. Trocar o formato da resposta** | Alterna entre os dois modelos de resposta da Parte C (o inicial é o Modelo 2, guiado e passo a passo) |
+| **4. Sobre o assistente e seus limites** | Explica de onde vêm as informações, que nada é gravado e que o assistente não é canal oficial |
+| **0. Sair** | Encerra o programa |
+
+### Navegação entre assuntos
+
+- Antes de cada orientação, a tela mostra **onde a pessoa está** na hierarquia, por exemplo: `Orientação cidadã > Documentos > título de eleitor`.
+- Depois de cada orientação, o assistente oferece **assuntos relacionados**: até 3 do mesmo tema e 1 de cada outro tema. A pessoa pode seguir de assunto em assunto ou voltar ao menu.
+
+### Tratamento de erros e situações-limite
+
+| Situação | O que o assistente faz |
+| --- | --- |
+| Enter sem digitar nada no menu | Avisa que nada foi digitado e pede o número de novo |
+| Texto no lugar de número (ex.: "abc") | Explica que é preciso digitar só o número e mostra a faixa válida |
+| Opção inexistente (ex.: 9) | Avisa que a opção não existe e mostra a faixa válida, sem sair do menu |
+| Pergunta vazia ou só com pontuação | Pede que a pessoa escreva uma pergunta e mostra os temas disponíveis |
+| Pergunta sem resposta na base | Mostra o aviso de limitação, lista todos os assuntos disponíveis e oferece "fazer outra pergunta" ou "ver os temas" |
+| Pergunta ambígua | Mostra as opções encontradas para a pessoa escolher, mais a opção **"Nenhuma dessas opções"**, que leva ao aviso de limitação |
+| Ctrl+C ou Ctrl+Z | Encerra o programa com uma mensagem de despedida, sem mostrar erro técnico |
+| Base ausente ou inválida | O programa não inicia e explica o motivo |
+
+### Privacidade na interface
+
+A tela de pergunta avisa para **não digitar dados pessoais**. Nada do que a pessoa digita é gravado em arquivo.
+
+### Testes da interface
+
+Os 11 testes de `tests/test_sistema.py` simulam o que a pessoa digita e conferem o que aparece na tela, cobrindo as principais situações da tabela acima.
 
 ---
 
