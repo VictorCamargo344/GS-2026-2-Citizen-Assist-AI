@@ -13,7 +13,7 @@ O enunciado aceita o teste com pelo menos um usuário **ou** com um roteiro de t
 | Aplicação | Quem executa | Situação |
 | --- | --- | --- |
 | **Aplicação 1 — roteiro de tarefas** | A equipe, seguindo as 11 tarefas abaixo na interface real (`python src/sistema.py`) | ✅ Realizada em 18/11/2026 (seção 5) |
-| **Aplicação 2 — participante externo** | Uma pessoa de fora da equipe, de preferência com pouca familiaridade com serviços públicos | Recomendada; roteiro e tabela prontos na seção 6 |
+| **Aplicação 2 — participante externo** | Uma pessoa de fora da equipe, de preferência com pouca familiaridade com serviços públicos | ✅ Realizada em 19/11/2026 (seção 6) |
 
 **Privacidade:** em nenhuma das aplicações são registrados nome, documento, idade exata ou outros dados pessoais. O participante é identificado só como "Participante 1" e por um perfil genérico.
 
@@ -98,16 +98,17 @@ Resultado: **C** = concluída · **N** = não concluída.
 - Depois de uma pergunta vazia, pedir a pergunta de novo em vez de voltar ao menu principal.
 - No menu de ambiguidade, mostrar também a pontuação ou uma frase de cada orientação, para a pessoa perceber quando nenhuma opção é a certa.
 
-## 6. Aplicação 2 — participante externo (recomendada)
+## 6. Aplicação 2 — participante externo (19/11/2026)
 
 ### 6.1 Participante
 
 | Campo | Valor |
 |---|---|
 | Identificação | Participante 1 |
-| Perfil genérico | [preencher] |
-| Data da aplicação | [preencher] |
-| Aplicador | [preencher] |
+| Perfil genérico | Adulta, acima de 60 anos, pouco uso de computador; primeira vez usando uma IDE de programação |
+| Data da aplicação | 19/11/2026 |
+| Aplicador | Integrante da equipe |
+| Ambiente | Terminal integrado do VS Code, com a base de 15 registros e o formato de resposta guiado |
 
 ### 6.2 Tarefas
 
@@ -115,26 +116,26 @@ Resultado: **C** = concluiu sozinho · **A** = concluiu com ajuda · **N** = nã
 
 | Nº | Resultado (C/A/N) | Tempo (s) | Tentativas | Dificuldades observadas |
 |---|---|---|---|---|
-| U1 | | | | |
-| U2 | | | | |
-| U3 | | | | |
-| U4 | | | | |
-| U5 | | | | |
-| U6 | | | | |
-| U7 | | | | |
-| U8 | | | | |
-| U9 | | | | |
-| U10 | | | | |
-| U11 | | | | |
+| U1 | C | 60–120 (aprox.) | — | Nenhuma |
+| U2 | C | 60–120 (aprox.) | — | Nenhuma |
+| U3 | A | 60–120 (aprox.) | — | Escreveu a pergunta, mas a resposta subiu na tela e o menu foi impresso de novo logo abaixo; precisou que mostrassem onde estava o texto |
+| U4 | A | 60–120 (aprox.) | — | Para achar a fonte e a data, precisou que mostrassem onde a resposta estava, acima do menu reimpresso |
+| U5 | C | 60–120 (aprox.) | — | Nenhuma |
+| U6 | A | 60–120 (aprox.) | — | O aviso de entrada vazia ficou acima do menu reimpresso; precisou que mostrassem onde a mensagem apareceu |
+| U7 | C | 60–120 (aprox.) | — | Nenhuma |
+| U8 | C | 60–120 (aprox.) | — | Nenhuma |
+| U9 | C | 60–120 (aprox.) | — | Nenhuma |
+| U10 | C | 60–120 (aprox.) | — | Nenhuma |
+| U11 | A | 60–120 (aprox.) | — | Para achar o aviso de conferir na fonte oficial, precisou que mostrassem onde a resposta estava, acima do menu reimpresso |
 
 ### 6.3 Perguntas finais
 
 | Pergunta | Resposta |
 |---|---|
-| Nota de facilidade (1 a 5) | |
-| O que foi mais difícil | |
-| Palavras ou mensagens não entendidas | |
-| Usaria para uma dúvida real? | |
+| Nota de facilidade (1 a 5) | 5 |
+| O que foi mais difícil | Escolher a opção pelo número e depois procurar o texto da resposta na tela |
+| Palavras ou mensagens não entendidas | Nenhuma |
+| Usaria para uma dúvida real? | Sim; achou o assistente útil |
 
 ### 6.4 Indicadores
 
@@ -143,9 +144,25 @@ Resultado: **C** = concluiu sozinho · **A** = concluiu com ajuda · **N** = nã
 - **Tempo médio por tarefa** (somente tarefas concluídas)
 - **Nota média de facilidade** (se houver mais de um participante)
 
+| Indicador | Resultado |
+| --- | --- |
+| Taxa de conclusão sem ajuda | **63,6%** (7 de 11) |
+| Taxa de conclusão total | **100%** (11 de 11) |
+| Tempo por tarefa | Entre 1 e 2 minutos (medido de forma aproximada, não tarefa a tarefa) |
+| Nota de facilidade | **5** (1 participante) |
+
+### 6.5 Interpretação
+
+A participante concluiu todas as tarefas e entendeu as mensagens do assistente: nenhuma palavra ficou sem entender. As 4 ajudas (U3, U4, U6 e U11) tiveram a mesma causa: **depois de cada resposta, o menu é impresso de novo logo abaixo, e a resposta sobe na tela**. Por isso, ela não encontrava o texto que precisava ler.
+
+Esse problema não apareceu na Aplicação 1, porque quem conhece o sistema sabe que a resposta fica acima do menu. Ele é a principal dificuldade de usabilidade encontrada. Uma melhoria simples é pausar depois de cada resposta, com uma mensagem como "Pressione Enter para voltar ao menu", em vez de mostrar o menu na mesma hora.
+
+A falta de familiaridade com uma IDE também pesou: a interface por terminal pressupõe algum hábito com computador, que nem todo o público do projeto tem. Uma versão web ou um executável que abra direto em uma janela simples reduziria essa barreira.
+
 ## 7. Limitações deste teste
 
-- **A Aplicação 1 foi feita por quem conhece o sistema.** Ela confirma que todas as tarefas **podem** ser concluídas e aponta problemas visíveis na tela, mas não mede se uma pessoa de fora entenderia as mensagens. Por isso a Aplicação 2 continua recomendada.
+- **A Aplicação 1 foi feita por quem conhece o sistema.** Ela confirma que todas as tarefas **podem** ser concluídas e aponta problemas visíveis na tela, mas não mede se uma pessoa de fora entenderia as mensagens. A Aplicação 2 complementa esse ponto.
 - Com 1 ou 2 participantes, o teste mostra dificuldades concretas, mas não permite generalizar para todo o público.
-- A presença do aplicador e o fato de saber que está sendo observado podem mudar o comportamento do participante.
+- A presença do aplicador e o fato de saber que está sendo observado podem mudar o comportamento do participante. Na Aplicação 2, a participante tem relação próxima com o aplicador, o que pode ter deixado a nota de facilidade mais favorável.
+- Na Aplicação 2, o tempo foi registrado de forma aproximada (entre 1 e 2 minutos por tarefa), e não tarefa a tarefa. O número de tentativas também não foi registrado.
 - As tarefas foram escritas pela equipe e usam assuntos que a base cobre; dúvidas reais podem ser bem diferentes.
