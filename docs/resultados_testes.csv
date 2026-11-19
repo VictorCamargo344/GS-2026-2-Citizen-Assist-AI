@@ -1,0 +1,43 @@
+﻿id_teste;tipo;pergunta;esperado;id_esperado;obtido;ids_obtidos;tamanho_menu;classificacao;motivo;tempo_busca_ms;tempo_consulta_ms
+T01;direta;Como tirar a carteira de identidade?;uma_correspondencia;DOC-01;multiplas_correspondencias;DOC-01, DOC-05;2;menu;DOC-01 na posição 1 de 2 opções;0,3886;0,4005
+T02;direta;Como tirar RG?;uma_correspondencia;DOC-01;uma_correspondencia;DOC-01;;direto;encontrou DOC-01;0,3300;0,3360
+T03;direta;Como agendar atendimento no Meu INSS?;uma_correspondencia;SER-01;uma_correspondencia;SER-01;;direto;encontrou SER-01;0,3412;0,3475
+T04;direta;Qual o horário da Central 135 do INSS?;uma_correspondencia;SER-01;uma_correspondencia;SER-01;;direto;encontrou SER-01;0,3737;0,3826
+T05;direta;Como receber alertas da Defesa Civil por SMS?;uma_correspondencia;COM-01;uma_correspondencia;COM-01;;direto;encontrou COM-01;0,3813;0,3905
+T06;direta;Como cancelar os alertas da Defesa Civil?;uma_correspondencia;COM-01;uma_correspondencia;COM-01;;direto;encontrou COM-01;0,3684;0,3775
+T07;reformulacao;Quero fazer meu documento de identificação;uma_correspondencia;DOC-01;uma_correspondencia;DOC-01;;direto;encontrou DOC-01;0,3834;0,3906
+T08;reformulacao;Como faço para me aposentar?;uma_correspondencia;SER-01;uma_correspondencia;SER-01;;direto;encontrou SER-01;0,4017;0,4090
+T09;reformulacao;Como ser avisado quando tiver chuva forte na minha cidade?;uma_correspondencia;COM-01;uma_correspondencia;COM-01;;direto;encontrou COM-01;0,3851;0,3948
+T10;limite;;entrada_vazia;;entrada_vazia;;;direto;reconheceu entrada vazia e pediu uma pergunta;0,0004;0,0007
+T11;limite;   ?!  ;entrada_vazia;;entrada_vazia;;;direto;reconheceu entrada vazia e pediu uma pergunta;0,0006;0,0010
+T12;limite;Preciso do RG para pedir benefício no INSS;multiplas_correspondencias;;multiplas_correspondencias;SER-01, DOC-01;2;direto;mostrou menu com 2 opções: SER-01, DOC-01;0,3625;0,3734
+T13;fora_do_tema;Como tirar a carteira de motorista?;sem_correspondencia;;multiplas_correspondencias;DOC-01, DOC-05;2;erro;falso positivo: DOC-01, DOC-05;0,3454;0,3554
+T14;fora_do_tema;Qual a previsão do tempo para amanhã?;sem_correspondencia;;sem_correspondencia;;;direto;sem registro e com aviso de limitação;0,3398;0,3433
+T15;fora_do_tema;Como fazer uma receita de bolo de cenoura?;sem_correspondencia;;sem_correspondencia;;;direto;sem registro e com aviso de limitação;0,3250;0,3296
+T16;direta;Como faço a inscrição no CPF?;uma_correspondencia;DOC-02;uma_correspondencia;DOC-02;;direto;encontrou DOC-02;0,3384;0,3461
+T17;direta;Como tirar o título de eleitor?;uma_correspondencia;DOC-03;uma_correspondencia;DOC-03;;direto;encontrou DOC-03;0,3628;0,3728
+T18;direta;Como pedir a segunda via da certidão de nascimento?;uma_correspondencia;DOC-04;uma_correspondencia;DOC-04;;direto;encontrou DOC-04;0,3785;0,3851
+T19;direta;Como obter a carteira de trabalho digital?;uma_correspondencia;DOC-05;multiplas_correspondencias;DOC-05, DOC-01;2;menu;DOC-05 na posição 1 de 2 opções;0,4235;0,4369
+T20;direta;Como me inscrever no Cadastro Único?;uma_correspondencia;SER-02;multiplas_correspondencias;SER-02, DOC-02;2;menu;SER-02 na posição 1 de 2 opções;0,3409;0,3510
+T21;direta;Como fazer o cartão do SUS?;uma_correspondencia;SER-03;uma_correspondencia;SER-03;;direto;encontrou SER-03;0,3378;0,3443
+T22;direta;Como pedir o seguro-desemprego?;uma_correspondencia;SER-04;uma_correspondencia;SER-04;;direto;encontrou SER-04;0,3614;0,3687
+T23;direta;Como subir minha conta gov.br para o nível prata?;uma_correspondencia;SER-05;uma_correspondencia;SER-05;;direto;encontrou SER-05;0,3727;0,3837
+T24;direta;Qual o número do SAMU em uma emergência?;uma_correspondencia;COM-02;uma_correspondencia;COM-02;;direto;encontrou COM-02;0,3955;0,4056
+T25;direta;Como fazer uma denúncia no Disque 100?;uma_correspondencia;COM-03;uma_correspondencia;COM-03;;direto;encontrou COM-03;0,3716;0,3813
+T26;direta;Como pedir ajuda em caso de violência contra a mulher?;uma_correspondencia;COM-04;uma_correspondencia;COM-04;;direto;encontrou COM-04;0,3745;0,3825
+T27;direta;Como fazer uma reclamação contra uma empresa como consumidor?;uma_correspondencia;COM-05;multiplas_correspondencias;COM-05, COM-04;2;menu;COM-05 na posição 1 de 2 opções;0,3447;0,3570
+T28;reformulacao;Fui mandado embora, tenho direito a algum auxílio?;uma_correspondencia;SER-04;multiplas_correspondencias;SER-04, COM-05;2;menu;SER-04 na posição 1 de 2 opções;0,3739;0,3861
+T29;reformulacao;Preciso de um médico urgente, para qual número ligo?;uma_correspondencia;COM-02;uma_correspondencia;COM-02;;direto;encontrou COM-02;0,3686;0,3787
+T30;fora_do_tema;Como renovar o passaporte?;sem_correspondencia;;sem_correspondencia;;;direto;sem registro e com aviso de limitação;0,3572;0,3620
+T31;fora_do_tema;Quanto custa a conta de luz?;sem_correspondencia;;uma_correspondencia;SER-05;;erro;falso positivo: SER-05;0,4087;0,4208
+T32;reformulacao_nova;Ainda não tenho o número do Cadastro de Pessoa Física, como consigo?;uma_correspondencia;DOC-02;multiplas_correspondencias;DOC-02, SER-02;2;menu;DOC-02 na posição 1 de 2 opções;0,4405;0,4530
+T33;reformulacao_nova;Fiz 16 anos e quero participar das eleições, o que faço?;uma_correspondencia;DOC-03;uma_correspondencia;DOC-03;;direto;encontrou DOC-03;0,3822;0,3896
+T34;reformulacao_nova;Perdi o documento que prova quando e onde eu nasci;uma_correspondencia;DOC-04;uma_correspondencia;DOC-04;;direto;encontrou DOC-04;0,3846;0,3916
+T35;reformulacao_nova;Como vejo meus empregos registrados no celular?;uma_correspondencia;DOC-05;sem_correspondencia;;;erro;não encontrou nada (esperado DOC-05);0,3676;0,3702
+T36;reformulacao_nova;Minha família tem renda baixa, como recebo ajuda do governo?;uma_correspondencia;SER-02;multiplas_correspondencias;SER-02, SER-05;2;menu;SER-02 na posição 1 de 2 opções;0,3923;0,4048
+T37;reformulacao_nova;Como faço a carteirinha para ser atendido na UBS?;uma_correspondencia;SER-03;uma_correspondencia;SER-03;;direto;encontrou SER-03;0,3993;0,4074
+T38;reformulacao_nova;Como crio meu login para acessar os serviços do governo pela internet?;uma_correspondencia;SER-05;uma_correspondencia;SER-05;;direto;encontrou SER-05;0,4161;0,4260
+T39;reformulacao_nova;Minha casa está pegando fogo, para quem ligo?;uma_correspondencia;COM-02;uma_correspondencia;COM-02;;direto;encontrou COM-02;0,4248;0,4348
+T40;reformulacao_nova;Meu marido me agride, onde posso pedir socorro?;uma_correspondencia;COM-04;uma_correspondencia;COM-02;;erro;encontrou COM-02 em vez de COM-04;0,3868;0,3942
+T41;reformulacao_nova;Comprei um produto com defeito e a loja não quer trocar, o que faço?;uma_correspondencia;COM-05;uma_correspondencia;COM-05;;direto;encontrou COM-05;0,4125;0,4218
+T42;reformulacao_nova;Vi uma criança sendo maltratada, onde aviso as autoridades?;uma_correspondencia;COM-03;multiplas_correspondencias;COM-01, COM-03;2;menu;COM-03 na posição 2 de 2 opções;0,3894;0,4014

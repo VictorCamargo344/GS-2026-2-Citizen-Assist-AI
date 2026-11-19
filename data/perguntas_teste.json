@@ -118,5 +118,221 @@
         "resultado_esperado": "sem_correspondencia",
         "id_esperado": null,
         "observacao": "Assunto totalmente alheio à orientação cidadã."
+    },
+    {
+        "id_teste": "T16",
+        "tipo": "direta",
+        "pergunta": "Como faço a inscrição no CPF?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "DOC-02",
+        "observacao": "Usa a expressão 'inscrição no cpf' das palavras-chave."
+    },
+    {
+        "id_teste": "T17",
+        "tipo": "direta",
+        "pergunta": "Como tirar o título de eleitor?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "DOC-03",
+        "observacao": "Expressão exata 'título de eleitor'."
+    },
+    {
+        "id_teste": "T18",
+        "tipo": "direta",
+        "pergunta": "Como pedir a segunda via da certidão de nascimento?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "DOC-04",
+        "observacao": "Duas expressões do mesmo registro: 'segunda via' e 'certidão de nascimento'."
+    },
+    {
+        "id_teste": "T19",
+        "tipo": "direta",
+        "pergunta": "Como obter a carteira de trabalho digital?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "DOC-05",
+        "observacao": "A palavra 'carteira' também aparece no DOC-01; pode gerar menu com DOC-05 em primeiro."
+    },
+    {
+        "id_teste": "T20",
+        "tipo": "direta",
+        "pergunta": "Como me inscrever no Cadastro Único?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "SER-02",
+        "observacao": "Expressão exata 'cadastro único'."
+    },
+    {
+        "id_teste": "T21",
+        "tipo": "direta",
+        "pergunta": "Como fazer o cartão do SUS?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "SER-03",
+        "observacao": "Expressão exata 'cartão do sus'."
+    },
+    {
+        "id_teste": "T22",
+        "tipo": "direta",
+        "pergunta": "Como pedir o seguro-desemprego?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "SER-04",
+        "observacao": "Palavra composta com hífen, igual à palavra-chave."
+    },
+    {
+        "id_teste": "T23",
+        "tipo": "direta",
+        "pergunta": "Como subir minha conta gov.br para o nível prata?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "SER-05",
+        "observacao": "Expressões 'conta gov.br' e 'nível prata'."
+    },
+    {
+        "id_teste": "T24",
+        "tipo": "direta",
+        "pergunta": "Qual o número do SAMU em uma emergência?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "COM-02",
+        "observacao": "Palavras 'samu' e 'emergência' do mesmo registro."
+    },
+    {
+        "id_teste": "T25",
+        "tipo": "direta",
+        "pergunta": "Como fazer uma denúncia no Disque 100?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "COM-03",
+        "observacao": "Expressão 'disque 100' e palavra 'denúncia'."
+    },
+    {
+        "id_teste": "T26",
+        "tipo": "direta",
+        "pergunta": "Como pedir ajuda em caso de violência contra a mulher?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "COM-04",
+        "observacao": "Expressão exata 'violência contra a mulher'."
+    },
+    {
+        "id_teste": "T27",
+        "tipo": "direta",
+        "pergunta": "Como fazer uma reclamação contra uma empresa como consumidor?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "COM-05",
+        "observacao": "Palavras 'reclamação' e 'consumidor'; 'contra' também aparece em 'violência contra a mulher' (COM-04)."
+    },
+    {
+        "id_teste": "T28",
+        "tipo": "reformulacao",
+        "pergunta": "Fui mandado embora, tenho direito a algum auxílio?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "SER-04",
+        "observacao": "Reformulação de T22 sem as palavras-chave; 'direito' pode puxar o COM-05 (direito do consumidor)."
+    },
+    {
+        "id_teste": "T29",
+        "tipo": "reformulacao",
+        "pergunta": "Preciso de um médico urgente, para qual número ligo?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "COM-02",
+        "observacao": "Reformulação de T24 sem 'samu' nem 'emergência'."
+    },
+    {
+        "id_teste": "T30",
+        "tipo": "fora_do_tema",
+        "pergunta": "Como renovar o passaporte?",
+        "resultado_esperado": "sem_correspondencia",
+        "id_esperado": null,
+        "observacao": "Documento que não está na base e não compartilha palavras com ela."
+    },
+    {
+        "id_teste": "T31",
+        "tipo": "fora_do_tema",
+        "pergunta": "Quanto custa a conta de luz?",
+        "resultado_esperado": "sem_correspondencia",
+        "id_esperado": null,
+        "observacao": "A palavra 'conta' aparece em 'conta gov.br' (SER-05): risco de falso positivo."
+    },
+    {
+        "id_teste": "T32",
+        "tipo": "reformulacao_nova",
+        "pergunta": "Ainda não tenho o número do Cadastro de Pessoa Física, como consigo?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "DOC-02",
+        "observacao": "Nome por extenso do CPF; 'cadastro' também aparece em 'cadastro único' (SER-02)."
+    },
+    {
+        "id_teste": "T33",
+        "tipo": "reformulacao_nova",
+        "pergunta": "Fiz 16 anos e quero participar das eleições, o que faço?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "DOC-03",
+        "observacao": "Dúvida sobre título de eleitor sem 'título', 'eleitor' ou 'votar'."
+    },
+    {
+        "id_teste": "T34",
+        "tipo": "reformulacao_nova",
+        "pergunta": "Perdi o documento que prova quando e onde eu nasci",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "DOC-04",
+        "observacao": "Segunda via da certidão de nascimento sem 'certidão', 'nascimento' ou 'segunda via'."
+    },
+    {
+        "id_teste": "T35",
+        "tipo": "reformulacao_nova",
+        "pergunta": "Como vejo meus empregos registrados no celular?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "DOC-05",
+        "observacao": "Carteira de Trabalho Digital descrita pelo uso, sem 'carteira' nem 'trabalho'."
+    },
+    {
+        "id_teste": "T36",
+        "tipo": "reformulacao_nova",
+        "pergunta": "Minha família tem renda baixa, como recebo ajuda do governo?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "SER-02",
+        "observacao": "Cadastro Único descrito pela situação da família."
+    },
+    {
+        "id_teste": "T37",
+        "tipo": "reformulacao_nova",
+        "pergunta": "Como faço a carteirinha para ser atendido na UBS?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "SER-03",
+        "observacao": "Cartão do SUS com palavras do dia a dia ('carteirinha', 'UBS')."
+    },
+    {
+        "id_teste": "T38",
+        "tipo": "reformulacao_nova",
+        "pergunta": "Como crio meu login para acessar os serviços do governo pela internet?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "SER-05",
+        "observacao": "Conta gov.br sem 'gov.br' nem 'conta'."
+    },
+    {
+        "id_teste": "T39",
+        "tipo": "reformulacao_nova",
+        "pergunta": "Minha casa está pegando fogo, para quem ligo?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "COM-02",
+        "observacao": "Emergência descrita pela situação, sem 'bombeiros' nem '193'."
+    },
+    {
+        "id_teste": "T40",
+        "tipo": "reformulacao_nova",
+        "pergunta": "Meu marido me agride, onde posso pedir socorro?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "COM-04",
+        "observacao": "Violência doméstica descrita pela situação; 'socorro' também combina com emergência."
+    },
+    {
+        "id_teste": "T41",
+        "tipo": "reformulacao_nova",
+        "pergunta": "Comprei um produto com defeito e a loja não quer trocar, o que faço?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "COM-05",
+        "observacao": "Reclamação de consumidor sem 'consumidor', 'reclamação' nem 'Procon'."
+    },
+    {
+        "id_teste": "T42",
+        "tipo": "reformulacao_nova",
+        "pergunta": "Vi uma criança sendo maltratada, onde aviso as autoridades?",
+        "resultado_esperado": "uma_correspondencia",
+        "id_esperado": "COM-03",
+        "observacao": "Denúncia ao Disque 100 sem 'denúncia' nem 'direitos humanos'."
     }
 ]
