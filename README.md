@@ -290,7 +290,12 @@ Resultados por pergunta, evolução entre as execuções e análise completa em 
 
 ### Teste de facilidade de uso
 
-O roteiro tem 11 tarefas: encontrar orientações pelo menu e por pergunta, identificar a fonte, navegar entre assuntos, lidar com erros e com perguntas fora da base. Executado pela equipe na interface real, ele teve **11 de 11 tarefas concluídas**, nenhuma com mais de 3 passos. As principais dificuldades observadas foram os nomes de assunto em sigla ("cpf", "inss") e sugestões de outros temas pouco relacionadas. Roteiro, resultados e tabela para aplicar com um participante externo em [`docs/teste_usabilidade.md`](docs/teste_usabilidade.md).
+O roteiro tem 11 tarefas: encontrar orientações pelo menu e por pergunta, identificar a fonte, navegar entre assuntos, lidar com erros e com perguntas fora da base. Ele foi aplicado duas vezes na interface real:
+
+- **Pela equipe:** 11 de 11 tarefas concluídas, nenhuma com mais de 3 passos. As dificuldades observadas foram os nomes de assunto em sigla ("cpf", "inss") e sugestões de outros temas pouco relacionadas.
+- **Com uma participante externa** (adulta, acima de 60 anos, pouco uso de computador e primeira vez em uma IDE): **11 de 11 tarefas concluídas, 7 sem ajuda (63,6%)**, entre 1 e 2 minutos por tarefa, e nota de facilidade **5 de 5**. As 4 ajudas tiveram a mesma causa: depois de cada resposta, o menu é impresso de novo e a resposta sobe na tela, então ela não encontrava o texto que precisava ler.
+
+Roteiro, resultados e interpretação em [`docs/teste_usabilidade.md`](docs/teste_usabilidade.md).
 
 ---
 
@@ -479,7 +484,7 @@ O que você quer fazer agora?
 
 ### 📢 Observações Gerais
 
-* **Participação na Competição:** [ ] Sim, aceitamos participar / [ ] Não vamos participar. **[pendente: decisão da equipe]**
+* **Participação na Competição:** [x] Sim, aceitamos participar / [ ] Não vamos participar.
 
 ---
 
@@ -494,7 +499,7 @@ O Citizen Assist AI mostra que regras simples de Python (listas, dicionários, l
 - **Só reconhece as palavras cadastradas:** sinônimos e variações (plural, verbo conjugado) que não estejam nas palavras-chave não são encontrados, como mostraram as reformulações T35 e T40.
 - **Falsos positivos por palavra solta:** uma única palavra em comum pode fazer o assistente oferecer uma orientação que não responde à pergunta.
 - **Base pequena e que envelhece:** 15 orientações, que precisam ser reconferidas periodicamente nas fontes oficiais.
-- **Avaliação limitada:** as perguntas de teste foram escritas pela equipe, e o roteiro de facilidade de uso foi executado pela própria equipe, ainda sem um participante externo.
+- **Avaliação limitada:** as perguntas de teste foram escritas pela equipe, e o teste de facilidade de uso teve um único participante externo, com tempos medidos de forma aproximada.
 
 ### Possibilidades de melhoria
 
@@ -502,8 +507,9 @@ O Citizen Assist AI mostra que regras simples de Python (listas, dicionários, l
 2. **Comparar palavras pelo radical**, para que "empregos" encontre "emprego" e "agride" encontre "agressão" sem cadastrar cada variação.
 3. **Exigir uma correspondência mais forte** antes de responder, perguntando "Você quis dizer...?" quando a única coincidência for uma palavra solta.
 4. **Testar com pessoas do público do projeto**, usando as dúvidas escritas por elas como novas perguntas de teste.
-5. **Nomes de assunto mais claros na interface** (por exemplo, "INSS — canais de atendimento" em vez de "inss") e sugestões de outros temas escolhidas pela relação com o assunto lido.
-6. **Criar uma rotina de revisão das fontes**, usando o campo `data_verificacao` para identificar orientações que precisam ser conferidas de novo.
+5. **Pausar depois de cada resposta** ("Pressione Enter para voltar ao menu"), para que a resposta não suba na tela quando o menu é impresso de novo. Foi a principal dificuldade do teste com a participante externa.
+6. **Nomes de assunto mais claros na interface** (por exemplo, "INSS — canais de atendimento" em vez de "inss") e sugestões de outros temas escolhidas pela relação com o assunto lido.
+7. **Criar uma rotina de revisão das fontes**, usando o campo `data_verificacao` para identificar orientações que precisam ser conferidas de novo.
 
 ---
 
