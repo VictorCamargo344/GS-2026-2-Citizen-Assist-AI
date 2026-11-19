@@ -7,7 +7,9 @@
             "rg",
             "cin",
             "carteira de identidade",
-            "carteira de identidade nacional"
+            "carteira de identidade nacional",
+            "identificação",
+            "registro geral"
         ],
         "orientacao": "A Carteira de Identidade Nacional (CIN) usa o número do CPF como registro único. A primeira via em papel e a versão digital no aplicativo GOV.BR são gratuitas. O pedido é feito no instituto de identificação do seu estado ou do Distrito Federal, levando a certidão de nascimento ou de casamento. O RG no modelo antigo continua válido até 28 de fevereiro de 2032, segundo a fonte consultada. Agendamento e outras exigências mudam de um estado para outro: confirme no órgão de identificação do seu estado antes de ir.",
         "referencia": {
@@ -15,6 +17,80 @@
             "link": "https://www.gov.br/gestao/pt-br/identidade-nacional"
         },
         "data_verificacao": "13/11/2026"
+    },
+    {
+        "id": "DOC-02",
+        "tema": "Documentos",
+        "palavras_chave": [
+            "cpf",
+            "inscrição no cpf",
+            "cadastro de pessoa física",
+            "cadastro de pessoas físicas"
+        ],
+        "orientacao": "A inscrição no CPF pode ser feita pela internet, por um formulário no portal gov.br, sem custo. Ela também pode ser feita nas unidades da Receita Federal e em unidades conveniadas, como agências do Banco do Brasil, da Caixa e dos Correios; nas conveniadas pode haver cobrança de uma taxa. Em alguns casos, o pedido online gera um protocolo e é preciso comparecer a uma unidade com documento de identidade com foto. Confirme os passos atuais na página do serviço.",
+        "referencia": {
+            "nome": "Portal gov.br - Inscrever Cidadão no Cadastro de Pessoas Físicas (CPF)",
+            "link": "https://www.gov.br/pt-br/servicos/inscrever-no-cpf"
+        },
+        "data_verificacao": "18/11/2026"
+    },
+    {
+        "id": "DOC-03",
+        "tema": "Documentos",
+        "palavras_chave": [
+            "título de eleitor",
+            "título eleitoral",
+            "e-título",
+            "alistamento eleitoral",
+            "tse",
+            "votar",
+            "eleições",
+            "eleição",
+            "alistamento",
+            "primeiro título"
+        ],
+        "orientacao": "O primeiro título de eleitor pode ser pedido pela internet, no Autoatendimento Eleitoral (Título Net) do site do Tribunal Superior Eleitoral, na opção \"Tire seu primeiro título\". São pedidos um documento oficial com foto e uma foto do rosto segurando o documento. O pedido gera um protocolo para acompanhamento e, depois de aprovado, o título fica disponível no aplicativo e-Título. O alistamento pode ser feito a partir dos 15 anos. Nos meses que antecedem as eleições, o alistamento fica temporariamente fechado: confirme no site do TSE se o serviço está disponível.",
+        "referencia": {
+            "nome": "Tribunal Superior Eleitoral (TSE) - Autoatendimento Eleitoral (Título Net)",
+            "link": "https://www.tse.jus.br/servicos-eleitorais/titulo-eleitoral/autoatendimento-eleitoral"
+        },
+        "data_verificacao": "18/11/2026"
+    },
+    {
+        "id": "DOC-04",
+        "tema": "Documentos",
+        "palavras_chave": [
+            "certidão de nascimento",
+            "segunda via",
+            "cartório",
+            "certidão",
+            "registro de nascimento",
+            "nasci"
+        ],
+        "orientacao": "O registro de nascimento e a primeira via da certidão são gratuitos por lei. A segunda via é pedida no cartório de registro civil onde o nascimento foi registrado e, em geral, tem custo. O pedido pode ser feito pela própria pessoa ou por um parente. Os valores e a forma de pedido variam de um cartório para outro: confirme diretamente no cartório responsável.",
+        "referencia": {
+            "nome": "Portal gov.br - Emissão gratuita da Certidão de Nascimento é garantida por Lei Federal",
+            "link": "https://www.gov.br/pt-br/noticias/assistencia-social/2021/11/emissao-gratuita-da-certidao-de-nascimento-e-garantida-por-lei-federal"
+        },
+        "data_verificacao": "18/11/2026"
+    },
+    {
+        "id": "DOC-05",
+        "tema": "Documentos",
+        "palavras_chave": [
+            "carteira de trabalho",
+            "carteira de trabalho digital",
+            "ctps",
+            "carteira profissional",
+            "carteira assinada",
+            "registro em carteira"
+        ],
+        "orientacao": "A Carteira de Trabalho Digital é gratuita e pode ser acessada pelo aplicativo Carteira de Trabalho Digital ou pelo portal gov.br, com o CPF e uma conta gov.br. O número da Carteira de Trabalho Digital é o próprio número do CPF. A carteira em papel só é emitida em casos específicos. Para tirar dúvidas, o atendimento telefônico é o 158.",
+        "referencia": {
+            "nome": "Portal gov.br - Obter a Carteira de Trabalho",
+            "link": "https://www.gov.br/pt-br/servicos/obter-a-carteira-de-trabalho"
+        },
+        "data_verificacao": "18/11/2026"
     },
     {
         "id": "SER-01",
@@ -25,7 +101,12 @@
             "meu inss",
             "previdência",
             "benefício",
-            "aposentadoria"
+            "aposentadoria",
+            "aposentar",
+            "aposentado",
+            "aposentada",
+            "pensão",
+            "previdência social"
         ],
         "orientacao": "Os canais oficiais de atendimento do INSS são o site e o aplicativo Meu INSS (meu.inss.gov.br) e a Central 135. No Meu INSS é possível fazer consultas, emitir extratos, agendar atendimento e pedir serviços. A Central 135 atende por telefone de segunda a sábado, das 7h às 22h, no horário de Brasília. Prazos e documentos dependem do serviço pedido: confirme no próprio Meu INSS ou pelo 135.",
         "referencia": {
@@ -33,6 +114,92 @@
             "link": "https://www.gov.br/inss/pt-br/noticias/utilize-os-canais-oficiais-do-inss-para-atendimento"
         },
         "data_verificacao": "13/11/2026"
+    },
+    {
+        "id": "SER-02",
+        "tema": "Serviços",
+        "palavras_chave": [
+            "cadastro único",
+            "cadúnico",
+            "cad único",
+            "cras",
+            "programas sociais",
+            "baixa renda",
+            "renda",
+            "programa social",
+            "família de baixa renda"
+        ],
+        "orientacao": "A inscrição no Cadastro Único é gratuita e feita presencialmente em um posto de atendimento do município, geralmente o CRAS. A pessoa responsável pela família leva um documento com foto e o CPF ou o título de eleitor, além de comprovante de residência; também é preciso um documento de cada pessoa da família. Algumas prefeituras exigem agendamento. O telefone oficial de informações é a Central 121. Atenção a golpes: o cadastro não é feito por mensagem ou ligação de desconhecidos.",
+        "referencia": {
+            "nome": "Portal gov.br - Inscrever-se no Cadastro Único (CadÚnico)",
+            "link": "https://www.gov.br/pt-br/servicos/inscrever-se-no-cadastro-unico-para-programas-sociais-do-governo-federal"
+        },
+        "data_verificacao": "18/11/2026"
+    },
+    {
+        "id": "SER-03",
+        "tema": "Serviços",
+        "palavras_chave": [
+            "cartão sus",
+            "cartão do sus",
+            "sus",
+            "cns",
+            "cartão de saúde",
+            "ubs",
+            "posto de saúde",
+            "cartão nacional de saúde",
+            "carteirinha do sus"
+        ],
+        "orientacao": "O Cartão Nacional de Saúde (cartão do SUS) é feito presencialmente em um estabelecimento de saúde, como a Unidade Básica de Saúde (UBS), levando documento de identificação, CPF e comprovante de residência. Quem já tem cadastro pode ver o número do cartão no aplicativo Meu SUS Digital, que é acessado com a conta gov.br, na área Perfil. O aplicativo não emite um cartão novo. Os documentos pedidos podem variar: confirme com a secretaria de saúde do seu município.",
+        "referencia": {
+            "nome": "Ministério da Saúde - Como faço o Cartão Nacional de Saúde (CNS) pelo Meu SUS Digital?",
+            "link": "https://www.gov.br/saude/pt-br/composicao/seidigi/meususdigital/perguntas-e-respostas/cidadao/9-como-faco-o-cartao"
+        },
+        "data_verificacao": "18/11/2026"
+    },
+    {
+        "id": "SER-04",
+        "tema": "Serviços",
+        "palavras_chave": [
+            "seguro-desemprego",
+            "seguro desemprego",
+            "desempregado",
+            "demissão",
+            "demitido",
+            "desemprego",
+            "mandado embora",
+            "dispensado",
+            "emprego"
+        ],
+        "orientacao": "O seguro-desemprego é pedido sem custo pelo aplicativo ou pelo site da Carteira de Trabalho Digital, com a conta gov.br. No aplicativo, entre em Benefícios, escolha Seguro-Desemprego e depois Solicitar, informando o número do requerimento entregue pelo empregador. O pedido pode ser feito a partir do 7º dia e até o 120º dia depois da demissão. Regras e prazos podem mudar: confirme na página oficial do serviço antes de fazer o pedido.",
+        "referencia": {
+            "nome": "Portal gov.br - Solicitar o Seguro-Desemprego",
+            "link": "https://www.gov.br/pt-br/servicos/solicitar-o-seguro-desemprego"
+        },
+        "data_verificacao": "18/11/2026"
+    },
+    {
+        "id": "SER-05",
+        "tema": "Serviços",
+        "palavras_chave": [
+            "conta gov.br",
+            "gov.br",
+            "govbr",
+            "nível prata",
+            "nível ouro",
+            "selo de confiabilidade",
+            "senha gov.br",
+            "login",
+            "senha",
+            "acesso gov.br",
+            "conta do governo"
+        ],
+        "orientacao": "A conta gov.br é criada no site ou no aplicativo gov.br, informando o CPF e cadastrando uma senha. Ela tem três níveis: bronze, prata e ouro; quanto maior o nível, mais serviços ficam disponíveis. O nível prata pode ser obtido validando os dados em um banco credenciado ou por reconhecimento facial com a foto da CNH. O nível ouro pode ser obtido pelo QR Code da Carteira de Identidade Nacional, por reconhecimento facial com os dados da Justiça Eleitoral ou por certificado digital. As formas de validação podem mudar: confirme na página oficial.",
+        "referencia": {
+            "nome": "Governo Digital - Saiba mais sobre os níveis da conta gov.br",
+            "link": "https://www.gov.br/governodigital/pt-br/identidade/conta-gov-br/niveis-da-conta-govbr"
+        },
+        "data_verificacao": "18/11/2026"
     },
     {
         "id": "COM-01",
@@ -44,7 +211,14 @@
             "40199",
             "sms",
             "desastre",
-            "enchente"
+            "enchente",
+            "aviso",
+            "avisos",
+            "chuva",
+            "temporal",
+            "inundação",
+            "alagamento",
+            "deslizamento"
         ],
         "orientacao": "Para receber alertas da Defesa Civil por SMS, envie uma mensagem com o CEP da área de interesse para o número 40199. Uma resposta confirma o cadastro. É possível cadastrar mais de um CEP. Para ver os CEPs já cadastrados, envie CONSULTAR para 40199; para cancelar, envie SAIR e o CEP. Os alertas também chegam por outros canais, como WhatsApp e Telegram: os detalhes estão na fonte.",
         "referencia": {
@@ -52,5 +226,97 @@
             "link": "https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/alertas-de-desastres-1"
         },
         "data_verificacao": "13/11/2026"
+    },
+    {
+        "id": "COM-02",
+        "tema": "Orientações comunitárias",
+        "palavras_chave": [
+            "emergência",
+            "190",
+            "192",
+            "193",
+            "samu",
+            "bombeiros",
+            "polícia",
+            "ambulância",
+            "médico",
+            "urgência",
+            "urgente",
+            "socorro",
+            "incêndio",
+            "fogo",
+            "acidente"
+        ],
+        "orientacao": "As ligações para os serviços públicos de emergência são gratuitas. Os principais números são: 190 para a Polícia Militar, 192 para o SAMU (atendimento médico de urgência), 193 para o Corpo de Bombeiros e 199 para a Defesa Civil. Use esses números somente em emergências, porque trotes atrasam o atendimento de quem precisa. Alguns serviços podem variar conforme a região: confirme os números da sua cidade.",
+        "referencia": {
+            "nome": "Agência Nacional de Telecomunicações (Anatel) - Serviços de Utilidade Pública e de Emergência",
+            "link": "https://www.gov.br/anatel/pt-br/regulado/numeracao/codigos-nacionais/servicos-de-utilidade-publica-e-de-emergencia"
+        },
+        "data_verificacao": "18/11/2026"
+    },
+    {
+        "id": "COM-03",
+        "tema": "Orientações comunitárias",
+        "palavras_chave": [
+            "disque 100",
+            "direitos humanos",
+            "denúncia",
+            "denunciar",
+            "violação de direitos",
+            "maus-tratos",
+            "abuso",
+            "discriminação",
+            "criança",
+            "idoso"
+        ],
+        "orientacao": "O Disque 100 recebe denúncias de violações de direitos humanos. A ligação para o número 100 é gratuita e o atendimento funciona 24 horas por dia, todos os dias, inclusive feriados. Também há atendimento pelo WhatsApp (61) 99611-0100. A denúncia pode ser anônima, e cada atendimento recebe um número de protocolo para acompanhamento. Em caso de emergência, ligue para a Polícia Militar no 190.",
+        "referencia": {
+            "nome": "Ministério dos Direitos Humanos e da Cidadania - Saiba quando e como acionar o Disque 100",
+            "link": "https://www.gov.br/mdh/pt-br/assuntos/noticias/2026/defeso-eleitoral/julho/saiba-quando-e-como-acionar-o-disque-100"
+        },
+        "data_verificacao": "18/11/2026"
+    },
+    {
+        "id": "COM-04",
+        "tema": "Orientações comunitárias",
+        "palavras_chave": [
+            "ligue 180",
+            "180",
+            "violência contra a mulher",
+            "violência doméstica",
+            "maria da penha",
+            "agressão",
+            "agredida",
+            "violência",
+            "companheiro"
+        ],
+        "orientacao": "O Ligue 180 é a Central de Atendimento à Mulher, que orienta e recebe relatos de violência contra a mulher. O atendimento funciona 24 horas por dia, inclusive aos sábados, domingos e feriados, pelo telefone 180, pelo WhatsApp (61) 9610-0180 ou pelo e-mail central180@mulheres.gov.br. Em caso de emergência, ligue para a Polícia Militar no 190.",
+        "referencia": {
+            "nome": "Ministério das Mulheres - Ligue 180 - Central de Atendimento à Mulher",
+            "link": "https://www.gov.br/mulheres/pt-br/ligue180"
+        },
+        "data_verificacao": "18/11/2026"
+    },
+    {
+        "id": "COM-05",
+        "tema": "Orientações comunitárias",
+        "palavras_chave": [
+            "consumidor",
+            "direito do consumidor",
+            "reclamação",
+            "reclamar",
+            "procon",
+            "defeito",
+            "troca",
+            "compra",
+            "garantia",
+            "loja"
+        ],
+        "orientacao": "O Consumidor.gov.br é um serviço público para registrar reclamações contra empresas, desde que a empresa esteja cadastrada na plataforma. É preciso ter uma conta gov.br de nível prata ou ouro. Depois do registro, a empresa tem até 10 dias para responder, e o consumidor tem até 20 dias para avaliar a resposta. A plataforma não aplica punição à empresa que não resolver o caso; se não houver solução, procure o Procon da sua cidade.",
+        "referencia": {
+            "nome": "Consumidor.gov.br - Como funciona",
+            "link": "https://www.consumidor.gov.br/pages/principal/como-funciona"
+        },
+        "data_verificacao": "18/11/2026"
     }
 ]
