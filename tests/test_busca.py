@@ -1,11 +1,11 @@
 r"""Testes de B: fixtures ficticias e integracao com a Parte A REAL.
 
-Na raiz desta entrega, no PowerShell:
-  $env:CITIZEN_PARTE_A_ZIP = 'caminho\Parte A.zip'
+Na raiz do repositorio:
   python -B -m unittest discover -s tests -v
 
-A falta do ZIP e ERRO de preparacao, nunca um teste de integracao aprovado.
-Nenhum arquivo de A e distribuido junto desta entrega.
+A integracao usa os arquivos reais do repositorio (src/base.py, src/busca.py e
+data/base_conhecimento.json). Eles sao copiados para uma pasta temporaria, para
+que nenhum teste altere os originais.
 """
 
 import contextlib
@@ -13,21 +13,25 @@ import copy
 import hashlib
 import importlib.util
 import io
-import os
 from pathlib import Path
 import subprocess
 import sys
 import tempfile
 import unittest
-import zipfile
 
+
+RAIZ_REPOSITORIO = Path(__file__).resolve().parents[1]
+ARQUIVOS_REAIS = {
+    "base.py": RAIZ_REPOSITORIO / "src" / "base.py",
+    "busca.py": RAIZ_REPOSITORIO / "src" / "busca.py",
+    "base_conhecimento.json": RAIZ_REPOSITORIO / "data" / "base_conhecimento.json",
+}
 
 BASE = None
 BUSCA = None
 PASTA_TEMP = None
-ZIP_A = None
-HASH_ZIP_A = None
 ORIGINAIS = {}
+HASHES_ORIGINAIS = {}
 
 
 def _importar(nome, caminho):
@@ -47,16 +51,15 @@ def _restaurar_modulos(anteriores):
 
 
 def setUpModule():
-    """Prepara A original + B num diretorio temporario, removido ao terminar."""
-    global BASE, BUSCA, PASTA_TEMP, ZIP_A, HASH_ZIP_A, ORIGINAIS
-    caminho_zip = os.environ.get("CITIZEN_PARTE_A_ZIP")
-    if not caminho_zip:
-        raise RuntimeError(
-            "Defina CITIZEN_PARTE_A_ZIP com o caminho do ZIP original da Parte A. "
-            "Sem ele, esta suite nao pode verificar a dependencia real."
-        )
-    ZIP_A = Path(caminho_zip).expanduser().resolve()
-    HASH_ZIP_A = hashlib.sha256(ZIP_A.read_bytes()).hexdigest()
+    """Copia A e B do repositorio para um diretorio temporario, removido ao terminar."""
+    global BASE, BUSCA, PASTA_TEMP, ORIGINAIS, HASHES_ORIGINAIS
+    for nome, caminho in ARQUIVOS_REAIS.items():
+        if not caminho.is_file():
+            raise RuntimeError(f"Arquivo do repositorio nao encontrado: {caminho} ({nome})")
+    ORIGINAIS = {nome: caminho.read_bytes() for nome, caminho in ARQUIVOS_REAIS.items()}
+    HASHES_ORIGINAIS = {nome: hashlib.sha256(conteudo).hexdigest()
+                        for nome, conteudo in ORIGINAIS.items()}
+
     temporario = tempfile.TemporaryDirectory(prefix="citizen_b_testes_")
     unittest.addModuleCleanup(temporario.cleanup)
     PASTA_TEMP = Path(temporario.name)
@@ -65,16 +68,9 @@ def setUpModule():
     pasta_src.mkdir()
     pasta_data.mkdir()
 
-    # Le somente os dois membros necessarios. Nao extrai caminhos arbitrarios.
-    with zipfile.ZipFile(ZIP_A) as arquivo_zip:
-        ORIGINAIS = {
-            "base.py": arquivo_zip.read("Parte A/base.py"),
-            "base_conhecimento.json": arquivo_zip.read("Parte A/base_conhecimento.json"),
-        }
     (pasta_src / "base.py").write_bytes(ORIGINAIS["base.py"])
+    (pasta_src / "busca.py").write_bytes(ORIGINAIS["busca.py"])
     (pasta_data / "base_conhecimento.json").write_bytes(ORIGINAIS["base_conhecimento.json"])
-    origem_b = Path(__file__).resolve().parents[1] / "src" / "busca.py"
-    (pasta_src / "busca.py").write_bytes(origem_b.read_bytes())
 
     anteriores = {nome: sys.modules.get(nome) for nome in ("base", "busca")}
     unittest.addModuleCleanup(_restaurar_modulos, anteriores)
@@ -394,7 +390,7 @@ class TestesUnitarios(unittest.TestCase):
 
 
 class TestesIntegracaoA(unittest.TestCase):
-    """Executa o contrato com os bytes reais recebidos no ZIP de A."""
+    """Executa o contrato com os arquivos reais de A presentes no repositorio."""
 
     def setUp(self):
         self.registros, erro = BASE.carregar_base()
@@ -402,12 +398,15 @@ class TestesIntegracaoA(unittest.TestCase):
         self.validos, problemas = BASE.validar_registros(self.registros)
         self.assertEqual(problemas, [])
 
-    def test_a_carrega_tres_registros_em_tres_temas(self):
-        self.assertEqual(len(self.validos), 3)
+    def test_a_carrega_base_minima_em_tres_temas(self):
+        # Minimo do enunciado: 15 registros em pelo menos 3 temas.
+        self.assertGreaterEqual(len(self.validos), 15)
         self.assertEqual(BASE.listar_temas(self.validos),
                          ["Documentos", "Serviços", "Orientações comunitárias"])
 
-    def test_consultas_aos_tres_registros_reais(self):
+    def test_consultas_aos_registros_reais(self):
+        # O registro certo precisa vir em primeiro lugar, com a pontuacao conhecida.
+        # Outros registros podem aparecer depois (palavras em comum, como "carteira").
         casos = [
             ("Como tirar a carteira de identidade?", "DOC-01", 4),
             ("Como consultar o Meu INSS?", "SER-01", 3),
@@ -416,13 +415,16 @@ class TestesIntegracaoA(unittest.TestCase):
         for pergunta, identificador, pontos in casos:
             with self.subTest(pergunta=pergunta):
                 resultado = BUSCA.buscar_pergunta(self.validos, pergunta)
-                self.assertEqual(resultado["estado"], "uma_correspondencia")
-                self.assertEqual(ids(resultado), [identificador])
+                self.assertIn(resultado["estado"], ("uma_correspondencia", "multiplas_correspondencias"))
+                self.assertEqual(ids(resultado)[0], identificador)
                 self.assertEqual(resultado["resultados"][0]["pontuacao"], pontos)
 
     def test_id_tema_e_palavra_chave_reais(self):
         self.assertEqual(ids(BUSCA.consultar_por_id(self.validos, " doc-01 ")), ["DOC-01"])
-        self.assertEqual(ids(BUSCA.consultar_por_tema(self.validos, "servicos")), ["SER-01"])
+        por_tema = BUSCA.consultar_por_tema(self.validos, "servicos")
+        self.assertIn("SER-01", ids(por_tema))
+        self.assertTrue(all(BASE.normalizar(item["registro"]["tema"]) == "servicos"
+                            for item in por_tema["resultados"]))
         self.assertEqual(ids(BUSCA.consultar_por_palavra_chave(self.validos, "defesa civil")), ["COM-01"])
 
     def test_ambiguidade_real_preserva_as_opcoes(self):
@@ -438,7 +440,7 @@ class TestesIntegracaoA(unittest.TestCase):
         for pergunta, estado in (("", "entrada_vazia"), ("?!", "entrada_vazia"),
                                   (None, "entrada_invalida"), ("como de o", "sem_correspondencia"),
                                   ("Como preparar bolo de chocolate?", "sem_correspondencia"),
-                                  ("Preciso consultar meu CPF", "sem_correspondencia")):
+                                  ("Como renovar o passaporte?", "sem_correspondencia")):
             with self.subTest(pergunta=pergunta):
                 self.assertEqual(BUSCA.buscar_pergunta(self.validos, pergunta)["estado"], estado)
 
@@ -463,11 +465,15 @@ class TestesIntegracaoA(unittest.TestCase):
         self.assertEqual(self.validos, antes)
         self.assertEqual(BASE.validar_registros(self.validos)[1], [])
 
-    def test_copias_temporarias_e_zip_original_inalterados(self):
+    def test_copias_temporarias_e_arquivos_do_repositorio_inalterados(self):
         self.assertEqual((PASTA_TEMP / "src" / "base.py").read_bytes(), ORIGINAIS["base.py"])
+        self.assertEqual((PASTA_TEMP / "src" / "busca.py").read_bytes(), ORIGINAIS["busca.py"])
         self.assertEqual((PASTA_TEMP / "data" / "base_conhecimento.json").read_bytes(),
                          ORIGINAIS["base_conhecimento.json"])
-        self.assertEqual(hashlib.sha256(ZIP_A.read_bytes()).hexdigest(), HASH_ZIP_A)
+        for nome, caminho in ARQUIVOS_REAIS.items():
+            with self.subTest(arquivo=nome):
+                self.assertEqual(hashlib.sha256(caminho.read_bytes()).hexdigest(),
+                                 HASHES_ORIGINAIS[nome])
 
     def test_importacao_sem_saida_interacao_ou_leitura_de_base(self):
         # Um processo novo elimina a possibilidade de o cache de import mascarar
