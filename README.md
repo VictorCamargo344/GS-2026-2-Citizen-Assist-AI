@@ -473,7 +473,7 @@ O que você quer fazer agora?
 
 ### 🔗 Links do Projeto
 
-* **Vídeo de apresentação (YouTube, não listado):** [pendente: link do vídeo]
+* **Vídeo de apresentação (YouTube, não listado):** [Assistir no YouTube](https://www.youtube.com/watch?v=TEpdqNk7i5M)
 
 ### 🧠 Decisões Técnicas
 
