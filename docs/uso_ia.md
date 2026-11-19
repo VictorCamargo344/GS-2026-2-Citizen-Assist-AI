@@ -330,7 +330,7 @@ Os pontos abaixo foram identificados na revisão do script e dos documentos (com
 
 ### Erros e limites encontrados
 
-- **As fontes foram consultadas por meio de resumos da ferramenta de busca, e não pela leitura integral de cada página.** A data `18/11/2026` nos registros novos indica quando as fontes foram consultadas dessa forma. Antes da entrega, a equipe precisa abrir cada um dos 12 links e confirmar cada frase.
+- **As fontes foram consultadas por meio de resumos da ferramenta de busca, e não pela leitura integral de cada página.** A data `18/11/2026` nos registros novos indica quando as fontes foram consultadas dessa forma. Antes da entrega, a equipe conferiu as informações frase a frase em 19/11/2026; parte delas foi confirmada em fontes oficiais complementares, não citadas no registro.
 - **Algumas fontes são antigas ou têm informações que mudam com frequência:** a página da certidão de nascimento é uma notícia de 2021, o prazo de 7 a 120 dias do seguro-desemprego vem de uma página de perguntas antiga do Ministério do Trabalho, e os bancos aceitos para o nível prata da conta gov.br mudam com o tempo. Nessas orientações, a frase de confirmação na fonte oficial foi mantida de propósito.
 - **Afirmações que não estavam nas fontes foram retiradas ou suavizadas:** por exemplo, o valor da taxa do CPF em unidades conveniadas foi substituído por "pode haver cobrança de uma taxa", e não foi afirmado que a segunda via da certidão é gratuita para todos.
 
