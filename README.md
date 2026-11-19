@@ -16,7 +16,7 @@ Global Solution 2026.2 · Desafio CitizenTech
 
 ## Nome do grupo
 
-[pendente: nome do grupo]
+ABCidadão
 
 ## 👨‍🎓 Integrantes
 
@@ -31,7 +31,7 @@ Global Solution 2026.2 · Desafio CitizenTech
 ## 👩‍🏫 Professores
 
 ### Tutor(a)
-- [pendente: nome do tutor]
+- André Tritiack de Farias
 
 ### Coordenador(a)
 - <a href="https://www.linkedin.com/in/andregodoichiovato/">André Godoi Chiovato</a>
