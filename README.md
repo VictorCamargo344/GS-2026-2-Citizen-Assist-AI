@@ -363,8 +363,9 @@ O que a base informa:
   1. O primeiro título de eleitor pode ser pedido pela internet, no Autoatendimento Eleitoral (Título Net) do site do Tribunal Superior Eleitoral, na opção "Tire seu primeiro título".
   2. São pedidos um documento oficial com foto e uma foto do rosto segurando o documento.
   3. O pedido gera um protocolo para acompanhamento e, depois de aprovado, o título fica disponível no aplicativo e-Título.
-  4. O alistamento pode ser feito a partir dos 15 anos.
-  5. Nos meses que antecedem as eleições, o alistamento fica temporariamente fechado: confirme no site do TSE se o serviço está disponível.
+  4. Vale lembrar que para quem solicita a primeira via pela internet sem ter biometria cadastrada, o comparecimento ao cartório eleitoral para coleta biométrica é obrigatório dentro do prazo informado pelo sistema.
+  5. O alistamento pode ser feito a partir dos 15 anos.
+  6. Nos meses que antecedem as eleições, o alistamento fica temporariamente fechado: confirme no site do TSE se o serviço está disponível.
 
 Onde conferir:
   Tribunal Superior Eleitoral (TSE) - Autoatendimento Eleitoral (Título Net) (https://www.tse.jus.br/servicos-eleitorais/titulo-eleitoral/autoatendimento-eleitoral)
