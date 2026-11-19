@@ -74,15 +74,6 @@ Por isso, não existem respostas de modelo externo para confrontar com a base ve
 - A IA não conseguiu abrir o repositório modelo da coordenação. Os nomes das pastas (`data/`, `src/`, `docs/`) precisam ser conferidos manualmente.
 - A página de perguntas frequentes do Governo Digital sobre a carteira de identidade não abriu. A IA usou a página do Ministério da Gestão (MGI), que é de 2024. Por isso, a orientação manda confirmar no órgão de identificação do estado.
 
-### Validação pela equipe (antes da entrega)
-
-- [ ] Rodar `python src/base.py` em um computador da equipe e conferir a saída
-- [ ] Abrir os 3 links oficiais e confirmar cada frase das orientações
-- [ ] Simular os erros: renomear o JSON (ausente), apagar o conteúdo (vazio) e tirar uma vírgula (malformado)
-- [ ] Decidir como escrever o prazo de validade do RG no registro DOC-01
-- [ ] Conferir os nomes das pastas no repositório modelo da coordenação
-- [ ] Cada integrante consegue explicar `carregar_base` e `validar_registros` sem consultar a IA
-
 ### Limites do uso de IA nesta parte
 
 - A IA não substitui a conferência das fontes: páginas oficiais mudam, e o campo `data_verificacao` registra quando cada uma foi vista.
@@ -99,7 +90,7 @@ Por isso, não existem respostas de modelo externo para confrontar com a base ve
 - **Data:** 17/11/2026.
 - **Materiais entregues à IA:** enunciado em texto, plano de trabalho do grupo e os arquivos da Parte A (`base.py` e `base_conhecimento.json`).
 
-O estudante responsável autorizou a geração do código e da documentação, limitada à Parte B. A ferramenta auxiliou na leitura dos requisitos, na definição das funções, na implementação da busca, da hierarquia e da navegação, na elaboração dos testes, na execução das verificações e na organização da entrega.
+A equipe autorizou a geração do código e da documentação, limitada à Parte B. A ferramenta auxiliou na leitura dos requisitos, na definição das funções, na implementação da busca, da hierarquia e da navegação, na elaboração dos testes, na execução das verificações e na organização da entrega.
 
 ### O que foi decisão da equipe
 
@@ -119,7 +110,7 @@ O estudante responsável autorizou a geração do código e da documentação, l
 - Oferecer navegação para outros assuntos do mesmo tema e para os demais temas, sem afirmar dependências entre os serviços.
 - Registrar estados de consulta e preservar os dados e as referências recebidos.
 
-Essas escolhas estão descritas em `docs/busca_navegacao.md` e devem ser estudadas e revisadas pelo estudante antes da apresentação. Não se afirma que houve aprovação humana individual de cada linha de código.
+Essas escolhas estão descritas em `docs/busca_navegacao.md` e devem ser estudadas e revisadas pela equipe antes da apresentação. Não se afirma que houve aprovação humana individual de cada linha de código.
 
 ### Validação crítica realizada
 
@@ -142,19 +133,10 @@ Os dados `FIC-*` e a fonte `example.invalid` existem somente nos testes. Não fo
 
 Esses ajustes vieram da revisão automatizada da ferramenta e não equivalem a revisão humana ou a teste com um cidadão.
 
-### Validação pela equipe (antes da entrega)
-
-- [ ] Estudar e conseguir explicar as funções, a pontuação, os empates e a navegação
-- [ ] Revisar a adequação dos termos e da linguagem ao público do projeto
-- [ ] Conferir a atualidade das orientações nas fontes oficiais da Parte A
-- [x] Ampliar a base para pelo menos 15 registros
-- [x] Integrar e avaliar as Partes C, D e E com a base final
-- [ ] Fazer a avaliação de facilidade de uso prevista no enunciado (roteiro aplicado na interface; falta a aplicação com participante externo)
-
 ### Limites do uso de IA nesta parte
 
 - As fontes cidadãs não foram reabertas na implementação da Parte B. Preservar os textos não é uma nova certificação do seu conteúdo ou das suas datas.
-- O material completo das aulas não foi disponibilizado à ferramenta. A adequação de nível foi orientada pelos requisitos e pelo pedido do estudante, sem conferência página a página das apostilas.
+- O material completo das aulas não foi disponibilizado à ferramenta. A adequação de nível foi orientada pelos requisitos e pelo pedido da equipe, sem conferência página a página das apostilas.
 
 ---
 
@@ -237,17 +219,18 @@ Nesta frente, **o código foi escrito inteiramente pela IA**, com supervisão da
 
 ### Erros da IA encontrados na revisão
 
-- [preencher: ajustes pedidos pela equipe ou sugestões da IA recusadas durante a supervisão]
+Nenhum erro foi identificado durante a supervisão. Em cada etapa, a IA escrevia o código, rodava os testes e só então apresentava a alteração para aprovação.
+
+A ausência de erros na supervisão não significa que a interface não tenha limitações. A execução do roteiro de tarefas (Aplicação 1, `docs/teste_usabilidade.md`) encontrou pontos a melhorar:
+
+- **Títulos dos assuntos pouco amigáveis:** o nome de cada assunto é a primeira palavra-chave do registro, por isso alguns aparecem em minúsculas ou como sigla ("cpf", "inss").
+- **Sugestões de outros temas pouco relacionadas:** a sugestão de outro tema é sempre o primeiro assunto daquele tema, mesmo sem relação com a orientação lida.
+- **Pergunta vazia volta ao menu principal:** depois do aviso, é preciso escolher a opção 2 de novo para digitar a pergunta.
 
 ### Limites do uso de IA nesta parte
 
 - Esta é a frente com maior participação da IA no projeto: o código foi escrito por ela, e a contribuição da equipe foi supervisionar, aprovar e ajustar cada etapa.
 - Os testes automatizados conferem o que aparece na tela, mas não substituem o teste com uma pessoa de fora da equipe (Aplicação 2 do teste de facilidade de uso).
-
-### Validação pela equipe (antes da entrega)
-
-- [ ] Conseguir explicar o fluxo de `menu_principal`, `fazer_pergunta`, `tratar_ambiguidade` e `escolher_numero` sem consultar a IA
-- [ ] Aplicar o teste de facilidade de uso com uma pessoa de fora da equipe (Aplicação 2)
 
 ---
 
@@ -263,22 +246,22 @@ Nesta frente, **o código foi escrito inteiramente pela IA**, com supervisão da
 
 ### Forma de trabalho
 
-A IA foi usada como tutora: explicava o que precisava ser feito e o estudante escrevia o código. Só em dois trechos, em que o estudante travou, a IA escreveu o código, e o estudante revisou o resultado. As decisões de critério foram discutidas antes de serem aplicadas.
+A IA foi usada como tutora: explicava o que precisava ser feito e a equipe escrevia o código. Só em dois trechos, em que a equipe travou, a IA escreveu o código, e a equipe revisou o resultado. As decisões de critério foram discutidas antes de serem aplicadas.
 
 ### O que a IA produziu e o que foi decisão da equipe
 
 | Item | Arquivo | Origem |
 | --- | --- | --- |
-| Perguntas de teste T01 a T05 | `data/perguntas_teste.json` | Escritas pelo estudante, com todos os campos |
-| Perguntas de teste T06 a T15 | `data/perguntas_teste.json` | Pergunta e `id_esperado` escritos pelo estudante; `tipo`, `resultado_esperado` e `observacao` completados pela IA |
+| Perguntas de teste T01 a T05 | `data/perguntas_teste.json` | Escritas pela equipe, com todos os campos |
+| Perguntas de teste T06 a T15 | `data/perguntas_teste.json` | Pergunta e `id_esperado` escritos pela equipe; `tipo`, `resultado_esperado` e `observacao` completados pela IA |
 | Perguntas de teste T16 a T31 | `data/perguntas_teste.json` | Geradas pela IA na integração, para os registros novos da base (ver "Integração e preparação da entrega") |
-| Renomear `id` para `id_teste` e usar em `resultado_esperado` os mesmos estados da Parte B | `data/perguntas_teste.json` | Decisão do estudante |
-| Critério de acerto: menu com o registro certo conta como acerto, separado em "direto" e "via menu" | `docs/resultados_testes.md` | Decisão do estudante |
-| Limite de 3 primeiras opções do menu para contar acerto | `docs/resultados_testes.md` | Decisão do estudante |
-| Falso positivo como erro explícito | `docs/resultados_testes.md` | Sugerido pela IA (Claude Code); aceito pelo estudante |
-| Texto do relatório de resultados (critérios, resultados, interpretação, melhorias e limitações) | `docs/resultados_testes.md` | Redigido pela IA a partir das definições do estudante e da execução real do script; revisado pelo estudante, que reescreveu trechos mantendo o sentido |
-| Funções `carregar_perguntas`, `executar_teste`, `classificar`, `montar_linha`, `media`, `percentual`, `calcular_indicadores`, `salvar_csv` e `mostrar_relatorio` | `src/testes.py` | Escritas pelo estudante, com orientação da IA |
-| Função `br` e bloco principal (`if __name__ == "__main__":`) | `src/testes.py` | Escritos pela IA a pedido do estudante; revisados pelo estudante |
+| Renomear `id` para `id_teste` e usar em `resultado_esperado` os mesmos estados da Parte B | `data/perguntas_teste.json` | Decisão da equipe |
+| Critério de acerto: menu com o registro certo conta como acerto, separado em "direto" e "via menu" | `docs/resultados_testes.md` | Decisão da equipe |
+| Limite de 3 primeiras opções do menu para contar acerto | `docs/resultados_testes.md` | Decisão da equipe |
+| Falso positivo como erro explícito | `docs/resultados_testes.md` | Sugerido pela IA (Claude Code); aceito pela equipe |
+| Texto do relatório de resultados (critérios, resultados, interpretação, melhorias e limitações) | `docs/resultados_testes.md` | Redigido pela IA a partir das definições da equipe e da execução real do script; revisado pela equipe, que reescreveu trechos mantendo o sentido |
+| Funções `carregar_perguntas`, `executar_teste`, `classificar`, `montar_linha`, `media`, `percentual`, `calcular_indicadores`, `salvar_csv` e `mostrar_relatorio` | `src/testes.py` | Escritas pela equipe, com orientação da IA |
+| Função `br` e bloco principal (`if __name__ == "__main__":`) | `src/testes.py` | Escritos pela IA a pedido da equipe; revisados pela equipe |
 | Roteiro do teste de facilidade de uso | `docs/teste_usabilidade.md` | Redigido pela IA |
 
 ### Validação crítica realizada
@@ -293,7 +276,7 @@ A IA foi usada como tutora: explicava o que precisava ser feito e o estudante es
 
 ### Erros da IA encontrados na revisão
 
-Os pontos abaixo foram identificados na revisão do script e dos documentos (com apoio do Claude, via claude.ai) e corrigidos por decisão do estudante.
+Os pontos abaixo foram identificados na revisão do script e dos documentos (com apoio do Claude, via claude.ai) e corrigidos por decisão da equipe.
 
 - **Pergunta ambígua classificada como "via menu".** Na pergunta ambígua, mostrar o menu é o comportamento esperado; contar como "via menu" faria parecer que o assistente teve dificuldade onde acertou. Corrigido para acerto direto.
 - **Critério que prometia mais do que o teste media.** O critério de "sem resposta" dizia que o sistema mostrava aviso e sugestão de temas, mas o script só conferia o estado da busca. Agora o script passa o resultado pela Parte C e confere o aviso; a sugestão de temas ficou para o teste de usabilidade.
@@ -302,22 +285,12 @@ Os pontos abaixo foram identificados na revisão do script e dos documentos (com
 - **CSV com padrão misturado.** O separador era `;` (padrão do Excel em português), mas os tempos tinham ponto decimal. Os tempos passaram a usar vírgula.
 - **Coluna enganosa no CSV.** A coluna `tamanho_menu` mostrava 1 ou 0 mesmo quando não havia menu. Agora fica vazia nesses casos.
 - **Comentários dependentes do documento.** Os comentários do código citavam "seção 2.3" e similares. Foram reescritos para explicar o que cada coisa faz sem depender de outro arquivo.
-- **Edições antes de decidir.** Em alguns momentos o Claude Code alterou arquivos logo depois de receber comentários, antes de a decisão estar tomada. O estudante pediu que as ressalvas fossem discutidas primeiro e só depois aplicadas.
-
-### Validação pela equipe (antes da entrega)
-
-- [x] Rodar de novo com a base de 15 registros e atualizar as seções 3 e 4 de `docs/resultados_testes.md`
-- [x] Acrescentar perguntas de teste para os registros novos (T16 a T31)
-- [ ] Rodar `python src/testes.py` em um computador da equipe e conferir a saída
-- [ ] Abrir `docs/resultados_testes.csv` no Excel e conferir acentos e números
-- [x] Aplicar o roteiro de tarefas na interface (Aplicação 1)
-- [ ] Aplicar o teste de facilidade de uso com uma pessoa de fora da equipe (Aplicação 2)
-- [ ] Conseguir explicar `classificar`, `executar_teste` e o cálculo dos indicadores sem consultar a IA
+- **Edições antes de decidir.** Em alguns momentos o Claude Code alterou arquivos logo depois de receber comentários, antes de a decisão estar tomada. A equipe pediu que as ressalvas fossem discutidas primeiro e só depois aplicadas.
 
 ### Limites do uso de IA nesta parte
 
 - Os testes automatizados conferem o comportamento do assistente (estado da busca, registro encontrado e presença dos avisos). Eles não avaliam se as orientações estão corretas ou claras para o público; isso depende da conferência das fontes e do teste com usuário.
-- A interpretação dos resultados foi redigida pela IA a partir de dados reais da execução e revisada pelo estudante; a responsabilidade pelas conclusões apresentadas é da equipe.
+- A interpretação dos resultados foi redigida pela IA a partir de dados reais da execução e revisada pela equipe; a responsabilidade pelas conclusões apresentadas é da equipe.
 
 ---
 
@@ -336,13 +309,13 @@ Os pontos abaixo foram identificados na revisão do script e dos documentos (com
 | Ampliação da base de 3 para 15 registros (12 novos: DOC-02 a DOC-05, SER-02 a SER-05, COM-02 a COM-05) | `data/base_conhecimento.json` | Decisão da equipe de ampliar a base; escolha dos assuntos, pesquisa das fontes oficiais e redação das orientações pela IA |
 | 16 perguntas de teste novas (T16 a T31), com gabarito definido antes da execução | `data/perguntas_teste.json` | Geradas pela IA |
 | Atualização dos resultados, da interpretação, das melhorias e das limitações | `docs/resultados_testes.md` | Redigidas pela IA a partir da execução real |
-| Adaptação dos testes da Parte B para usarem os arquivos do repositório, sem o ZIP externo, e para a base de 15 registros | `tests/test_busca.py` | Feita pela IA a pedido do estudante |
+| Adaptação dos testes da Parte B para usarem os arquivos do repositório, sem o ZIP externo, e para a base de 15 registros | `tests/test_busca.py` | Feita pela IA a pedido da equipe |
 | Comparação dos dois modelos de resposta nas 18 perguntas diretas | `docs/modelos_prompt.md` | Dados gerados com as funções da Parte C; texto e conclusão redigidos pela IA |
 | Roteiro do teste de facilidade de uso | `docs/teste_usabilidade.md` | Redigido pela IA |
-| Aplicação do roteiro de tarefas na interface real (Aplicação 1) | `docs/teste_usabilidade.md` | [confirmar: executada pelo estudante ou pela IA] |
-| 11 reformulações de validação (T32 a T42), escritas antes da ampliação do vocabulário e com gabarito não alterado depois | `data/perguntas_teste.json` | [confirmar: geradas pela IA ou escritas pelo estudante] |
-| Vocabulário do dia a dia nas palavras-chave dos 15 registros (63 palavras-chave novas) | `data/base_conhecimento.json` | Melhoria proposta na avaliação; [confirmar: termos escolhidos pela IA e aprovados pelo estudante, ou escolhidos pelo estudante] |
-| Unificação dos registros de uso de IA e reorganização da pasta `docs/` | `docs/` | Feita pela IA; o estudante decidiu apagar os arquivos de origem e as evidências internas da Parte B |
+| Aplicação do roteiro de tarefas na interface real (Aplicação 1) | `docs/teste_usabilidade.md` | Executada pela equipe na interface real |
+| 11 reformulações de validação (T32 a T42), escritas antes da ampliação do vocabulário e com gabarito não alterado depois | `data/perguntas_teste.json` | Geradas pela IA |
+| Vocabulário do dia a dia nas palavras-chave dos 15 registros (63 palavras-chave novas) | `data/base_conhecimento.json` | Melhoria pedida pela equipe a partir do resultado dos testes; a maior parte dos termos foi escolhida pela equipe, e parte veio de sugestões da IA aprovadas pela equipe |
+| Unificação dos registros de uso de IA e reorganização da pasta `docs/` | `docs/` | Feita pela IA; a equipe decidiu apagar os arquivos de origem e as evidências internas da Parte B |
 | README completo | `README.md` | Redigido pela IA a partir dos documentos do projeto |
 
 ### Validação crítica realizada
@@ -360,14 +333,6 @@ Os pontos abaixo foram identificados na revisão do script e dos documentos (com
 - **As fontes foram consultadas por meio de resumos da ferramenta de busca, e não pela leitura integral de cada página.** A data `18/11/2026` nos registros novos indica quando as fontes foram consultadas dessa forma. Antes da entrega, a equipe precisa abrir cada um dos 12 links e confirmar cada frase.
 - **Algumas fontes são antigas ou têm informações que mudam com frequência:** a página da certidão de nascimento é uma notícia de 2021, o prazo de 7 a 120 dias do seguro-desemprego vem de uma página de perguntas antiga do Ministério do Trabalho, e os bancos aceitos para o nível prata da conta gov.br mudam com o tempo. Nessas orientações, a frase de confirmação na fonte oficial foi mantida de propósito.
 - **Afirmações que não estavam nas fontes foram retiradas ou suavizadas:** por exemplo, o valor da taxa do CPF em unidades conveniadas foi substituído por "pode haver cobrança de uma taxa", e não foi afirmado que a segunda via da certidão é gratuita para todos.
-
-### Validação pela equipe (antes da entrega)
-
-- [ ] Abrir os 12 links novos da base e confirmar cada frase das orientações
-- [ ] Conferir se as 63 palavras-chave novas fazem sentido para a orientação de cada registro
-- [ ] Rodar `python src/base.py`, `python src/testes.py` e `python -B -m unittest discover -s tests` em um computador da equipe
-- [ ] A pessoa da frente B revisar as adaptações em `tests/test_busca.py`
-- [ ] A pessoa da frente C revisar a comparação dos modelos em `docs/modelos_prompt.md`
 
 ---
 
