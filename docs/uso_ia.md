@@ -230,7 +230,7 @@ A ausência de erros na supervisão não significa que a interface não tenha li
 ### Limites do uso de IA nesta parte
 
 - Esta é a frente com maior participação da IA no projeto: o código foi escrito por ela, e a contribuição da equipe foi supervisionar, aprovar e ajustar cada etapa.
-- Os testes automatizados conferem o que aparece na tela, mas não substituem o teste com uma pessoa de fora da equipe (Aplicação 2 do teste de facilidade de uso).
+- Os testes automatizados conferem o que aparece na tela, mas não substituem o teste com uma pessoa de fora da equipe. Esse teste (Aplicação 2 do teste de facilidade de uso, 19/11/2026) encontrou uma dificuldade que os testes automatizados não pegaram: a resposta sobe na tela quando o menu é impresso de novo.
 
 ---
 
